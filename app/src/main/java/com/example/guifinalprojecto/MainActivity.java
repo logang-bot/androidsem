@@ -73,7 +73,9 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                TextInputEditText et_email = root.findViewById(R.id.et_email);
+                Intent intent = new Intent(root, MainDashboard.class);
+                root.startActivity(intent);
+                /*TextInputEditText et_email = root.findViewById(R.id.et_email);
                 TextInputEditText et_password = root.findViewById(R.id.et_password);
 
                 String email = et_email.getText().toString().trim();

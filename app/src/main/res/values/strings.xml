@@ -21,4 +21,5 @@
     <string name="title_activity_register">register</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_display_profile">displayProfile</string>
 </resources>

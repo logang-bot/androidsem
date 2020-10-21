@@ -13,9 +13,13 @@
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".displayProfile"
+            android:label="@string/title_activity_display_profile"
+            android:theme="@style/Theme.GUIfinalProjecto.NoActionBar"></activity>
+        <activity
             android:name=".register"
             android:label="@string/title_activity_register"
-            android:theme="@style/Theme.GUIfinalProjecto.NoActionBar"></activity>
+            android:theme="@style/Theme.GUIfinalProjecto.NoActionBar" />
         <activity
             android:name=".MainDashboard"
             android:label="@string/title_activity_main_dashboard"
@@ -27,6 +31,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

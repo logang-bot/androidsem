@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
@@ -17,11 +18,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-public class MainDashboard extends AppCompatActivity {
+public class MainDashboard extends AppCompatActivity{
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private BottomNavigationView bottomNavigationView;
+    private NavigationView navigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,10 @@ public class MainDashboard extends AppCompatActivity {
         mDrawerLayout.addDrawerListener(mToggle);
         mToggle.syncState();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        navigationView = findViewById(R.id.profile_settings);
+        //navigationView.setNavigationItemSelectedListener();
+
         //drawer
 
         /*Toolbar toolbar = findViewById(R.id.toolbar);
@@ -68,6 +74,7 @@ public class MainDashboard extends AppCompatActivity {
                         " number = "+number.toString(), Toast.LENGTH_LONG).show();*/
     }
 
+    //bottomnav
     private BottomNavigationView.OnNavigationItemSelectedListener bottomnavmethod = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -91,6 +98,18 @@ public class MainDashboard extends AppCompatActivity {
                     return true;
                 }
             };
+    //bottomnav
+    //drawer
+    /*private  NavigationView.OnNavigationItemSelectedListener drawermethod = new
+            NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    return false;
+                }
+            };
+*/
+
+    //drawer
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
