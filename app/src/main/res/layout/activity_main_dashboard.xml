@@ -13,15 +13,23 @@
         android:layout_height="match_parent">
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:theme="@style/Theme.GUIfinalProjecto.AppBarOverlay">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="match_parent"
                 android:background="#292323"
                 app:popupTheme="@style/Theme.GUIfinalProjecto.PopupOverlay" >
+
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/alex_brush"
+                    android:text="Virtual Eats"
+                    android:textAlignment="center"
+                    android:textSize="45sp" />
 
             </androidx.appcompat.widget.Toolbar>
 

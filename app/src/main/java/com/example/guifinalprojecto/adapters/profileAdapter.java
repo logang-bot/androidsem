@@ -11,36 +11,39 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.guifinalprojecto.R;
 import com.example.guifinalprojecto.interfaces.RetrofitClient;
-import com.example.guifinalprojecto.utils.EndPoints;
+import com.example.guifinalprojecto.models.user;
 
 import java.util.ArrayList;
 
-public class HomeAdapter extends BaseAdapter {
-    private ArrayList<structRests> listdata;
+public class profileAdapter extends BaseAdapter {
+    private user userdata;
     private Context context;
-    public HomeAdapter(ArrayList<structRests> data, Context context){
-        listdata = data;
+
+    public profileAdapter (user data, Context context){
+        userdata = data;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return listdata.size();
+        return 0;
     }
 
     @Override
     public Object getItem(int i) {
-        return listdata.get(i);
+        return null;
     }
 
     @Override
     public long getItemId(int i) {
-        return i;
+        return 0;
     }
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null){
+
+            /*
             view = LayoutInflater.from(context).inflate(R.layout.item_res, null);
             TextView nameRes = view.findViewById(R.id.nameRes);
             TextView calle = view.findViewById(R.id.calleRes);
@@ -51,6 +54,17 @@ public class HomeAdapter extends BaseAdapter {
                     .load(RetrofitClient.BASE_URL + listdata.get(i).getLogo())
                     .centerCrop()
                     .into(imageView);
+            */
+
+            view = LayoutInflater.from(context).inflate(R.layout.header, null);
+            TextView username = view.findViewById(R.id.username);
+            ImageView imageView = view.findViewById(R.id.profile);
+            username.setText(userdata.getName());
+            Glide.with(context)
+                    .load(RetrofitClient.BASE_URL + userdata.getAvatar())
+                    .centerCrop()
+                    .into(imageView);
+
         }
         return view;
     }

@@ -4,19 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="160dp"
     android:background="@drawable/header"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:id="@+id/contentprof">
     <ImageView
-        android:src="@drawable/profile"
-
+        android:id="@+id/profile"
         android:layout_width="75dp"
         android:layout_height="75dp"
         />
+
     <TextView
+        android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ichigo"
+        android:layout_marginTop="5dp"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="5dp"/>
+        android:textStyle="bold" />
 
 </LinearLayout>

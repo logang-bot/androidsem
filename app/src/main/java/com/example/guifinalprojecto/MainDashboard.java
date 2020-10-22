@@ -1,7 +1,15 @@
 package com.example.guifinalprojecto;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import com.bumptech.glide.Glide;
+import com.example.guifinalprojecto.adapters.HomeAdapter;
+import com.example.guifinalprojecto.adapters.profileAdapter;
+import com.example.guifinalprojecto.adapters.structRests;
+import com.example.guifinalprojecto.interfaces.RetrofitClient;
+import com.example.guifinalprojecto.models.user;
+import com.example.guifinalprojecto.utils.UserDataServer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -16,7 +24,16 @@ import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainDashboard extends AppCompatActivity{
 
@@ -24,6 +41,7 @@ public class MainDashboard extends AppCompatActivity{
     private ActionBarDrawerToggle mToggle;
     private BottomNavigationView bottomNavigationView;
     private NavigationView navigationView;
+    private MainDashboard root = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +65,33 @@ public class MainDashboard extends AppCompatActivity{
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         navigationView = findViewById(R.id.profile_settings);
-        //navigationView.setNavigationItemSelectedListener();
+        navigationView.setNavigationItemSelectedListener(drawermethod);
+            //profileload
 
+        Call<user> call = RetrofitClient
+                .getInstance()
+                .getApi().getMydata(UserDataServer.TOKEN);
+
+        call.enqueue(new Callback<user>() {
+            @Override
+            public void onResponse(Call<user> call, Response<user> response) {
+                user thedata = response.body();
+                TextView username = findViewById(R.id.username);
+                ImageView prof = findViewById(R.id.profile);
+                username.setText(thedata.getName());
+                Glide.with(getApplicationContext())
+                        .load(RetrofitClient.BASE_URL + thedata.getAvatar())
+                        .centerCrop()
+                        .into(prof);
+            }
+
+            @Override
+            public void onFailure(Call<user> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+
+            //profileload*/
         //drawer
 
         /*Toolbar toolbar = findViewById(R.id.toolbar);
@@ -100,16 +143,21 @@ public class MainDashboard extends AppCompatActivity{
             };
     //bottomnav
     //drawer
-    /*private  NavigationView.OnNavigationItemSelectedListener drawermethod = new
+    private  NavigationView.OnNavigationItemSelectedListener drawermethod = new
             NavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    return false;
+
+                    switch (item.getItemId()){
+                        case R.id.settings:
+                            Intent intent = new Intent(root, displayProfile.class);
+                            root.startActivity(intent);
+                            break;
+                    }
+
+                    return true;
                 }
             };
-*/
-
-    //drawer
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -118,4 +166,5 @@ public class MainDashboard extends AppCompatActivity{
         }
         return super.onOptionsItemSelected(item);
     }
+    //drawer
 }
