@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
     ConstraintLayout constraintLayout;
     TextView tvTimeMsg;
-    Button loginButton;
+    Button loginButton, signupButton;
 
 
     private MainActivity root = this;
@@ -70,6 +70,16 @@ public class MainActivity extends AppCompatActivity {
     }
     private void loadComponents() {
         loginButton = this.findViewById(R.id.btn_signIn);
+        signupButton = this.findViewById(R.id.btn_signUp);
+
+        signupButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(root, register.class);
+                root.startActivity(intent);
+            }
+        });
+
         loginButton.setOnClickListener((new View.OnClickListener() {
             @Override
             public void onClick(View view){

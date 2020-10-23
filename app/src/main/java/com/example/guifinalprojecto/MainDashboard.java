@@ -141,8 +141,11 @@ public class MainDashboard extends AppCompatActivity{
                             Intent intent = new Intent(root, displayProfile.class);
                             root.startActivity(intent);
                             break;
+                        case R.id.myrests:
+                            Intent intent2= new Intent(root, listMyRests.class);
+                            root.startActivity(intent2);
+                            break;
                     }
-
                     return true;
                 }
             };
