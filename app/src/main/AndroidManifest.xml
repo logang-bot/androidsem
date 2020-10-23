@@ -12,10 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
+        <activity android:name=".listMenus"></activity>
         <activity
             android:name=".displayProfile"
             android:label="@string/title_activity_display_profile"
-            android:theme="@style/Theme.GUIfinalProjecto.NoActionBar"></activity>
+            android:theme="@style/Theme.GUIfinalProjecto.NoActionBar" />
         <activity
             android:name=".register"
             android:label="@string/title_activity_register"

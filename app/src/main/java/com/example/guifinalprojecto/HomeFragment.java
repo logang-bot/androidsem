@@ -1,6 +1,7 @@
 package com.example.guifinalprojecto;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -28,6 +32,8 @@ import retrofit2.Response;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+
+    private HomeFragment root = this;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -93,18 +99,31 @@ public class HomeFragment extends Fragment {
             @Override
             public void onResponse(Call<ArrayList<structRests>> call, Response<ArrayList<structRests>> response) {
                 ArrayList<structRests> data = response.body();
-                /*ArrayList<structRests> datos = new ArrayList<>();
-                for(int i=0 ; i<data.size() ; i++){
-                    structRests item = new structRests("","","","","","","","","","","");
-                    item.setNombre(data.get(i).getNombre());
-                    item.setCalle(data.get(i).getCalle());
-                    //item.setLogo("");
-                    datos.add(item);
-                }*/
-
                 HomeAdapter adapter = new HomeAdapter(data, getContext());
                 //ArrayAdapter<String> adapter= new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, datos);
                 list.setAdapter(adapter);
+
+                //making functional each item
+                list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        //animation
+                        Animation animation1 = new AlphaAnimation(0.3f, 1.0f);
+                        animation1.setDuration(4000);
+                        view.startAnimation(animation1);
+                        //animation
+                        Intent intent = new Intent(getContext(), listMenus.class);
+                        intent.putExtra("idUser", data.get(i).get_id());
+                        getContext().startActivity(intent);
+                         /*Intent intent = new Intent(root, MainDashboard.class);
+                intent.putExtra("backupAgentName", root.getApplicationInfo().backupAgentName);
+                intent.putExtra("data", "soy la informacion de la actividad MainActivity");
+                intent.putExtra("number", 26);
+                root.startActivity(intent);*/
+                        Toast.makeText(getContext(),data.get(i).getNit() , Toast.LENGTH_LONG).show();
+                    }
+                });
             }
 
             @Override
