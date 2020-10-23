@@ -13,7 +13,7 @@ public class listMenus extends AppCompatActivity {
         setContentView(R.layout.activity_list_menus);
 
         Bundle bundle = this.getIntent().getExtras();
-        String idUser = bundle.getString("idUser");
-        Toast.makeText(this," idUser = "+idUser.toString(), Toast.LENGTH_LONG).show();
+        String idRest = bundle.getString("idRest");
+        Toast.makeText(this," idRest = "+idRest.toString(), Toast.LENGTH_LONG).show();
     }
 }
