@@ -24,6 +24,7 @@ public interface Api {
             @Field("password") String password
     );
 
+
     @GET("res")
     Call<ArrayList<structRests>> getRests();
 

@@ -124,12 +124,13 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="117dp"
         android:layout_marginTop="184dp"
         android:layout_marginEnd="118dp"
-        android:text="No tienes una cuenta aun?"
+        android:text="¿No tienes una cuenta aun?"
+        android:textAlignment="center"
         android:textColor="#ffffff"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
