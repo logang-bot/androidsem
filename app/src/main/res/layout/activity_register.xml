@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -23,13 +23,69 @@
         android:layout_marginLeft="120dp"
         android:layout_marginTop="130dp"
         android:layout_marginEnd="8dp"
+        android:fontFamily="@font/gotham"
         android:text="Registrarse"
+
         android:textAlignment="center"
-        android:textColor="@color/darkgray"
-        android:textSize="30sp"
+        android:textColor="#182B18"
+        android:textSize="35sp"
 
         android:textStyle="bold" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical">
+         <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="#FF000000"
+        app:civ_border_overlay="true"
+        app:civ_border_width="2dp"
 
+
+        />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="310dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-condensed-light"
+        android:text="Añade una foto \ de perfil"
+
+        android:textAlignment="center"
+        android:textColor="#332E2E"
+        android:textSize="18sp"
+
+        android:textStyle="bold" />
+    <Button
+        android:id="@+id/addImage"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="350dp"
+        android:layout_marginEnd="152dp"
+        android:backgroundTint="@android:color/transparent"
+        android:text="Agregar"
+        android:textColor="#0B0B0B"
+        app:cornerRadius="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +102,7 @@
             android:backgroundTint="@android:color/transparent"
             android:hint="Name"
             android:inputType="text"
-
+            android:padding="15dp"
 
             android:textColor="@color/white"
 
@@ -182,5 +238,4 @@
 
     </LinearLayout>
 
-
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</RelativeLayout>
