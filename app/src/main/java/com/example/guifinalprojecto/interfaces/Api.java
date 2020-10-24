@@ -15,6 +15,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface Api {
     @FormUrlEncoded
@@ -30,4 +31,8 @@ public interface Api {
 
     @GET("user/mydata")
     Call<user> getMydata(@Header("x-access-token") String auth);
+
+    @GET("res/list")
+    Call<ArrayList<structRests>> getMyRests(@Header("x-access-token") String auth);
+
 }
