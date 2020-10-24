@@ -4,6 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#494949"
     tools:context=".listMyRests">
+    <RelativeLayout
+        android:background="#292323"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:theme="@style/Theme.GUIfinalProjecto.AppBarOverlay">
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#292323"
+                app:popupTheme="@style/Theme.GUIfinalProjecto.PopupOverlay" >
+
+                <TextView
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/alex_brush"
+                    android:text="My Restaurants"
+
+                    android:textSize="37sp" />
+
+                <Button
+                    android:id="@+id/newR"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/ic_menu_add"
+                    android:backgroundTint="#4B817C"
+                    app:cornerRadius="45dp"
+                    android:layout_marginLeft="40dp"
+                    android:drawableLeft="@android:drawable/ic_menu_add"
+                    android:fontFamily="@font/boogaloo"
+                    android:text="new"
+                    android:textColor="#ffff"
+                    android:textSize="10sp"/>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <ListView
+            android:id="@+id/myrest"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="65dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            />
+
+    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

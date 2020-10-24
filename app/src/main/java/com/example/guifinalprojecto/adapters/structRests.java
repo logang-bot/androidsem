@@ -12,6 +12,7 @@ public class structRests {
     private String telefono;
     private String log;
     private String lat;
+    private String message;
 
     public structRests(String logo, String foto, String _id, String fechaReg, String nombre, String nit, String propietario, String calle, String telefono, String log, String lat) {
         this.logo = logo;
@@ -25,6 +26,7 @@ public class structRests {
         this.telefono = telefono;
         this.log = log;
         this.lat = lat;
+        this.message = message;
     }
 
     public String getLogo() {
@@ -113,5 +115,13 @@ public class structRests {
 
     public void setLat(String lat) {
         this.lat = lat;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }
