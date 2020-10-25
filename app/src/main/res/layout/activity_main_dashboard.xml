@@ -29,7 +29,7 @@
                     android:fontFamily="@font/alex_brush"
                     android:text="Virtual Eats"
                     android:textAlignment="center"
-                    android:textSize="45sp" />
+                    android:textSize="40sp" />
 
             </androidx.appcompat.widget.Toolbar>
 

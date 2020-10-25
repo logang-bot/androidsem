@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="#292323"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:theme="@style/Theme.GUIfinalProjecto.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#273937"
+                >
+
+                <TextView
+                    android:id="@+id/TitleRest"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:fontFamily="@font/alex_brush"
+                    android:textAlignment="center"
+                    android:textSize="37sp"
+                    android:textColor="#ffff"/>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp">
+
+            <ImageView
+                android:id="@+id/imgRestP"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/propRest"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="casual"
+                android:layout_height="30dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintTop_toBottomOf="@+id/imgRestP"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/nitRest"
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="casual"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/propRest"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/amarante"
+                android:text="Nit  :"
+                android:textColor="#4B817C"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:text="Propietario  :  "
+                android:fontFamily="@font/amarante"
+                android:textColor="#4B817C"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgRestP"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/amarante"
+                android:text="Direccion  :"
+                android:textColor="#4B817C"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Telefono  :"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/amarante"
+                android:textColor="#4B817C"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Log  :"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/amarante"
+                android:textColor="#4B817C"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Lat  :"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/amarante"
+                android:textColor="#4B817C"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:text="Fecha de Registro  :"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/amarante"
+                android:textColor="#4B817C"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <TextView
+                android:id="@+id/dirRest"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="casual"
+                app:layout_constraintStart_toEndOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/nitRest" />
+
+            <TextView
+                android:id="@+id/telRest"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="casual"
+                app:layout_constraintStart_toEndOf="@+id/textView6"
+                app:layout_constraintTop_toBottomOf="@+id/dirRest" />
+
+            <TextView
+                android:id="@+id/logRest"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="casual"
+                app:layout_constraintStart_toEndOf="@+id/textView7"
+                app:layout_constraintTop_toBottomOf="@+id/telRest" />
+
+            <TextView
+                android:id="@+id/latRest"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="casual"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/logRest" />
+
+            <TextView
+                android:id="@+id/fechaRest"
+                android:layout_width="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_height="30dp"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:fontFamily="casual"
+                app:layout_constraintStart_toEndOf="@+id/textView9"
+                app:layout_constraintTop_toBottomOf="@+id/latRest" />
+
+            <Button
+                android:id="@+id/editarRest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:backgroundTint="#273937"
+                android:fontFamily="@font/boogaloo"
+                android:text="EDITAR"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                app:cornerRadius="45dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fechaRest"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/eliminarRest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="#273937"
+                android:fontFamily="@font/boogaloo"
+                android:text="Eliminar"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                app:cornerRadius="45dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editarRest"
+                tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
