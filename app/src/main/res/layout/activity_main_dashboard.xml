@@ -25,11 +25,11 @@
 
                 <TextView
                     android:layout_width="270dp"
-                    android:layout_height="40dp"
+                    android:layout_height="wrap_content"
                     android:fontFamily="@font/alex_brush"
                     android:text="Virtual Eats"
                     android:textAlignment="center"
-                    android:textSize="40sp" />
+                    android:textSize="37sp" />
 
             </androidx.appcompat.widget.Toolbar>
 
