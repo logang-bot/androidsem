@@ -28,7 +28,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class listMyRests extends AppCompatActivity {
-    private listMyRests root;
+    private listMyRests root=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,16 +50,32 @@ public class listMyRests extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<structRests>> call, Response<ArrayList<structRests>> response) {
 
-             /*   if(response.isSuccessful()){
-                    if(response.body().getNombre()!=null){
+           /*    if(response.isSuccessful()){
+                    if(response.body().get(0).getMessage()!=null){
                         TextView textRest=findViewById(R.id.callRest);
                         textRest.setText("No tiene Restaurants");
                     }
-                    else{*/
+                    else{ */
                         ArrayList<structRests> data = response.body();
                         ResAdapter adapter = new ResAdapter(data, getApplicationContext());
                         listR.setAdapter(adapter);
-                  //  }}
+             //      }}
+
+                listR.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        //animation
+                        Animation animation1 = new AlphaAnimation(0.3f, 1.0f);
+                        animation1.setDuration(4000);
+                        view.startAnimation(animation1);
+                        //animation
+                        Intent intent = new Intent(getApplicationContext(), dataMyRest.class); //cambiar vista
+                        intent.putExtra("idRest", data.get(i).get_id());
+                        root.startActivity(intent);
+                        Toast.makeText(getApplicationContext(),data.get(i).getNit() , Toast.LENGTH_LONG).show();
+                    }
+                });
 
             }
             @Override

@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
-        <activity android:name=".listMyRests"></activity>
+        <activity android:name=".dataMyRest"></activity>
+        <activity android:name=".listMyRests" />
         <activity android:name=".listMenus" />
         <activity
             android:name=".displayProfile"

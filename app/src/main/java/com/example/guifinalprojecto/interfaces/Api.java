@@ -34,4 +34,7 @@ public interface Api {
     @GET("res/list")
     Call<ArrayList<structRests>> getMyRests(@Header("x-access-token") String auth);
 
+    @GET("res/mydata")
+    Call<structRests> getMydataRes(@Header("x-access-token") String auth,@Query("id") String idRes);
+
 }
