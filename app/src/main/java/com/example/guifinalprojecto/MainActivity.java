@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Toast.makeText(this, UserDataServer.TOKEN, Toast.LENGTH_LONG).show();
+
         constraintLayout=findViewById(R.id.container);
         tvTimeMsg=findViewById(R.id.tv_time_msg);
 
