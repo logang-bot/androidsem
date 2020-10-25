@@ -30,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class    MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     ConstraintLayout constraintLayout;
     TextView tvTimeMsg;
@@ -117,7 +117,7 @@ public class    MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<logInResponse> call, Throwable t) {
-
+                        Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
                 //login
