@@ -12,7 +12,6 @@ import com.example.guifinalprojecto.interfaces.RetrofitClient;
 import com.example.guifinalprojecto.models.logInResponse;
 import com.example.guifinalprojecto.utils.UserDataServer;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
 import androidx.annotation.Nullable;
@@ -24,7 +23,6 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.File;
@@ -61,7 +59,7 @@ public class register extends AppCompatActivity {
     private void loadComponents() {
         reg_confirm = this.findViewById(R.id.reg_confirm);
         addImage = this.findViewById(R.id.addImage);
-        img = this.findViewById(R.id.profile_image);
+        img = this.findViewById(R.id.menu_image);
 
         addImage.setOnClickListener(new View.OnClickListener() {
             @Override
