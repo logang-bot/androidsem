@@ -3,8 +3,8 @@ package com.example.guifinalprojecto.adapters;
 public class structMenu {
     private String nombre;
     private String precio;
-    private  String descripcion;
-    private  String fechareg;
+    private String descripcion;
+    private String fechareg;
     private String foto;
     private String id_rest;
     private String contador;

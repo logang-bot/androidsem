@@ -12,6 +12,7 @@ import java.util.List;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -19,6 +20,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
 
@@ -43,7 +45,19 @@ public interface Api {
     @GET("user/mydata")
     Call<user> getMydata(@Header("x-access-token") String auth);
 
+    @Multipart
+    @PUT("user/edAvatar")
+    Call<logInResponse> edAvatar(@Header("x-access-token") String auth, @Part MultipartBody.Part part);
 
+    @FormUrlEncoded
+    @PUT("user/edit")
+    Call<logInResponse> edUser(@Header("x-access-token") String auth,
+                               @Field("name") String name,
+                               @Field("email") String email,
+                               @Field("password") String password,
+                               @Field("confirm_password") String confirm_password);
+    @DELETE("user/delete")
+    Call<logInResponse> delUser(@Header("x-access-token") String auth);
 
     @GET("res")
     Call<ArrayList<structRests>> getRests();
@@ -55,7 +69,7 @@ public interface Api {
     Call<structRests> getMydataRes(@Header("x-access-token") String auth,@Query("id") String idRes);
 
     @GET("menu")
-    Call<ArrayList<structMenu>> getMenu(@Query("id") String idRes);
+    Call<ArrayList<structMenu>> getMenu(@Query("idRes") String idRes);
 
 
 }

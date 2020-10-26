@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".displayProfile">
 
-
-
     <RelativeLayout
         android:background="#292323"
         android:layout_width="match_parent"
@@ -48,18 +46,17 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/myAvatar"
-                android:src="@drawable/userprofile"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
                 android:layout_marginStart="120dp"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="120dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/userprofile"
                 app:civ_border_color="@color/darkgray"
                 app:civ_border_width="2dp"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/edAvatar"
@@ -117,9 +114,10 @@
                 app:strokeColor="@color/white" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/deleteUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="176dp"
                 android:layout_marginTop="130dp"
                 android:layout_marginEnd="176dp"
                 android:layout_marginBottom="10dp"
@@ -127,18 +125,21 @@
                 android:src="@drawable/ic_baseline_delete_24"
                 app:layout_constraintBottom_toTopOf="@+id/textView10"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edit_info" />
 
             <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="156dp"
                 android:layout_marginEnd="156dp"
                 android:layout_marginBottom="20dp"
                 android:text="Delete Account"
                 android:textColor="#ffffff"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/floatingActionButton" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
