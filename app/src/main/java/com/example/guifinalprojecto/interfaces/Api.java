@@ -18,6 +18,7 @@ import retrofit2.http.Header;
 import retrofit2.http.Headers;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 import retrofit2.http.Query;
 
@@ -41,6 +42,10 @@ public interface Api {
 
     @GET("user/mydata")
     Call<user> getMydata(@Header("x-access-token") String auth);
+
+    @Multipart
+    @PUT("user/edAvatar")
+    Call<logInResponse> edAvatar(@Header("x-access-token") String auth, @Part MultipartBody.Part part);
 
 
 
