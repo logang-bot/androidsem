@@ -1,4 +1,14 @@
 package com.example.guifinalprojecto;
 
-public class dataMenu {
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class dataMenu extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_data_menu);
+    }
 }

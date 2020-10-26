@@ -48,8 +48,6 @@ public interface Api {
     @PUT("user/edAvatar")
     Call<logInResponse> edAvatar(@Header("x-access-token") String auth, @Part MultipartBody.Part part);
 
-
-
     @GET("res")
     Call<ArrayList<structRests>> getRests();
 
@@ -60,7 +58,7 @@ public interface Api {
     Call<structRests> getMydataRes(@Header("x-access-token") String auth,@Query("id") String idRes);
 
     @GET("menu")
-    Call<ArrayList<structMenu>> getMenu(@Query("id") String idRes);
+    Call<ArrayList<structMenu>> getMenu(@Query("idRes") String idRes);
 
 
 }

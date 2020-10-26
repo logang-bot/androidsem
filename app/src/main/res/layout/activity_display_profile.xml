@@ -48,14 +48,9 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/myAvatar"
-<<<<<<< HEAD
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-=======
+                android:layout_width="220dp"
+                android:layout_height="220dp"
                 android:src="@drawable/userprofile"
-                android:layout_width="170dp"
-                android:layout_height="170dp"
->>>>>>> fbf2bbd38c8b02d722c49c6c6661c6f7bde76174
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="120dp"
                 android:layout_marginEnd="120dp"

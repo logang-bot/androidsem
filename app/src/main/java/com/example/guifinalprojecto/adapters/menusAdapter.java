@@ -45,10 +45,10 @@ public class menusAdapter  extends BaseAdapter {
         TextView nombreMenu=(TextView) view.findViewById(R.id.item_name_menu);
         nombreMenu.setText(listMenus.get(i).getNombre());
 
-        Glide.with(contextM)
+        /*Glide.with(contextM)
                 .load(RetrofitClient.BASE_URL + listMenus.get(i).getFoto())
                 .centerCrop()
-                .into(imgMenu);
+                .into(imgMenu);*/
         return view;
     }
 }
