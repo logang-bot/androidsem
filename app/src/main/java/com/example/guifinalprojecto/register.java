@@ -100,28 +100,34 @@ public class register extends AppCompatActivity {
                     RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
                     body = MultipartBody.Part.createFormData("img", file.getName(), requestFile);
                 }
-
-                Call<logInResponse> call = RetrofitClient
-                        .getInstance()
-                        .getApi().signUp(bname,bemail,bpassword,bcpassword, body);
-                call.enqueue(new Callback<logInResponse>() {
-                    @Override
-                    public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
-                        if(response.body().getToken()!=null){
-                            UserDataServer.TOKEN = response.body().getToken();
+                if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(getApplicationContext(), "no permission", Toast.LENGTH_SHORT).show();
+                    requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 225);
+                } else{
+                    Call<logInResponse> call = RetrofitClient
+                            .getInstance()
+                            .getApi().signUp(bname,bemail,bpassword,bcpassword, body);
+                    call.enqueue(new Callback<logInResponse>() {
+                        @Override
+                        public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
+                            if(response.body().getToken()!=null){
+                                UserDataServer.TOKEN = response.body().getToken();
+                            }
+                            Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                            if(response.body().getMessage().equals("sugoi")){
+                                Intent intent = new Intent(root, MainDashboard.class);
+                                root.startActivity(intent);
+                            }
                         }
-                        Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        if(response.body().getMessage().equals("sugoi")){
-                            Intent intent = new Intent(root, MainDashboard.class);
-                            root.startActivity(intent);
-                        }
-                    }
 
-                    @Override
-                    public void onFailure(Call<logInResponse> call, Throwable t) {
-                        Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });
+                        @Override
+                        public void onFailure(Call<logInResponse> call, Throwable t) {
+                            Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    Log.i("Mensaje", "Se tiene permiso para leer!");
+                }
+
             }
         });
     }

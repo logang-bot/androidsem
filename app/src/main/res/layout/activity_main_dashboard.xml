@@ -46,9 +46,6 @@
             android:layout_alignParentBottom="true"
             android:background="#000000"
             app:menu="@menu/bottom_menu"/>
-
-
-
     </RelativeLayout>
 
     <com.google.android.material.navigation.NavigationView
