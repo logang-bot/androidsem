@@ -8,7 +8,16 @@
     android:background="@drawable/backgroundregister"
     tools:context=".register">
 
-    <TextView
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/backregister"
+        android:scaleType="centerCrop"
+        />
+
+<TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
 
@@ -27,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/profile_image"
+        android:id="@+id/menu_image"
         android:layout_width="110dp"
         android:layout_height="110dp"
         android:layout_marginStart="150dp"
@@ -59,7 +68,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        app:layout_constraintTop_toBottomOf="@+id/menu_image" />
 
     <Button
         android:id="@+id/addImage"
