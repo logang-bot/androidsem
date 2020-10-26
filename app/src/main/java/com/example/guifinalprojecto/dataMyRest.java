@@ -36,8 +36,8 @@ public class dataMyRest extends AppCompatActivity {
             public void onResponse(Call<structRests> call, Response<structRests> response) {
                 structRests data = response.body();
                 ImageView imgRest= findViewById(R.id.imgRestP);
+                ImageView logoRest= findViewById(R.id.logoRest);
                 TextView TitleRest= findViewById(R.id.TitleRest);
-                //TextView propRest= findViewById(R.id.propRest);
                 TextView nitRest= findViewById(R.id.nitRest);
                 TextView dirRest=findViewById(R.id.dirRest);
                 TextView telRest=findViewById(R.id.telRest);
@@ -53,9 +53,13 @@ public class dataMyRest extends AppCompatActivity {
                 latRest.setText(data.getLat());
                 fechRest.setText(data.getFechaReg());
                 Glide.with(getApplicationContext())
-                        .load(RetrofitClient.BASE_URL + data.getLogo())
+                        .load(RetrofitClient.BASE_URL + data.getFoto())
                         .centerCrop()
                         .into(imgRest);
+                Glide.with(getApplicationContext())
+                        .load(RetrofitClient.BASE_URL + data.getLogo())
+                        .centerCrop()
+                        .into(logoRest);
             }
             @Override
             public void onFailure(Call<structRests> call, Throwable t) {

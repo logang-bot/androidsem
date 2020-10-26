@@ -45,12 +45,17 @@ public class HomeAdapter extends BaseAdapter {
             TextView nameRes = view.findViewById(R.id.nameRes);
             TextView calle = view.findViewById(R.id.calleRes);
             ImageView imageView= view.findViewById(R.id.imageView);
+            ImageView logoView= view.findViewById(R.id.imgR);
             nameRes.setText(listdata.get(i).getNombre());
             calle.setText(listdata.get(i).getCalle());
             Glide.with(context)
-                    .load(RetrofitClient.BASE_URL + listdata.get(i).getLogo())
+                    .load(RetrofitClient.BASE_URL + listdata.get(i).getFoto())
                     .centerCrop()
                     .into(imageView);
+            Glide.with(context)
+                    .load(RetrofitClient.BASE_URL + listdata.get(i).getLogo())
+                    .centerCrop()
+                    .into(logoView);
         }
         return view;
     }
