@@ -39,12 +39,13 @@ public interface Api {
             @Part MultipartBody.Part part
     );
 
+    @GET("user/mydata")
+    Call<user> getMydata(@Header("x-access-token") String auth);
+
+
 
     @GET("res")
     Call<ArrayList<structRests>> getRests();
-
-    @GET("user/mydata")
-    Call<user> getMydata(@Header("x-access-token") String auth);
 
     @GET("res/list")
     Call<ArrayList<structRests>> getMyRests(@Header("x-access-token") String auth);
