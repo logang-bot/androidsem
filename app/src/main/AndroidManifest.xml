@@ -16,12 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
-<<<<<<< HEAD
+
         <activity android:name=".editUser"></activity>
-=======
+
         <activity android:name=".createMyRest"></activity>
         <activity android:name=".editMyRest" />
->>>>>>> 7013c54ad7bf7bd86fe647df2b1a260982bc0c60
+
         <activity android:name=".dataMyRest" />
         <activity android:name=".listMyRests" />
         <activity android:name=".listMenus" />
