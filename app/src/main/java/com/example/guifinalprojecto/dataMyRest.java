@@ -37,7 +37,7 @@ public class dataMyRest extends AppCompatActivity {
                 structRests data = response.body();
                 ImageView imgRest= findViewById(R.id.imgRestP);
                 TextView TitleRest= findViewById(R.id.TitleRest);
-                TextView propRest= findViewById(R.id.propRest);
+                //TextView propRest= findViewById(R.id.propRest);
                 TextView nitRest= findViewById(R.id.nitRest);
                 TextView dirRest=findViewById(R.id.dirRest);
                 TextView telRest=findViewById(R.id.telRest);
@@ -45,7 +45,7 @@ public class dataMyRest extends AppCompatActivity {
                 TextView latRest=findViewById(R.id.latRest);
                 TextView fechRest=findViewById(R.id.fechaRest);
                 TitleRest.setText(data.getNombre());
-                propRest.setText(data.getPropietario());
+               // propRest.setText(data.getPropietario());
                 nitRest.setText(data.getNit());
                 dirRest.setText(data.getCalle());
                 telRest.setText(data.getTelefono());
