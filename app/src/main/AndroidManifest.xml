@@ -19,6 +19,12 @@
         <activity android:name=".editUser"></activity>
         <activity android:name=".createMyRest"></activity>
         <activity android:name=".editMyRest" />
+
+        <activity android:name=".editUser"></activity>
+
+        <activity android:name=".createMyRest"></activity>
+        <activity android:name=".editMyRest" />
+
         <activity android:name=".dataMyRest" />
         <activity android:name=".listMyRests" />
         <activity android:name=".listMenus" />

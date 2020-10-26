@@ -1,5 +1,6 @@
 package com.example.guifinalprojecto.interfaces;
 
+import com.example.guifinalprojecto.adapters.structMenu;
 import com.example.guifinalprojecto.adapters.structRests;
 import com.example.guifinalprojecto.models.logInResponse;
 import com.example.guifinalprojecto.models.user;
@@ -52,5 +53,9 @@ public interface Api {
 
     @GET("res/mydata")
     Call<structRests> getMydataRes(@Header("x-access-token") String auth,@Query("id") String idRes);
+
+    @GET("menu")
+    Call<ArrayList<structMenu>> getMenu(@Query("id") String idRes);
+
 
 }
