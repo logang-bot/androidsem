@@ -1,6 +1,11 @@
 package com.example.guifinalprojecto;
 
+import android.Manifest;
+import android.content.ClipData;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.example.guifinalprojecto.interfaces.RetrofitClient;
@@ -10,19 +15,38 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.File;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 public class register extends AppCompatActivity {
-    Button reg_confirm;
+
+    private int PICK_IMAGE = 100;
+    private Uri imagenUri;
+    private String mediaPath, postPath;
+
+    private FloatingActionButton reg_confirm;
+    private Button addImage ;
+    private CircleImageView img;
+
     private register root =this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,42 +56,101 @@ public class register extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       /* FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
+    loadComponents();
     }
     private void loadComponents() {
-        TextInputEditText reg_name = root.findViewById(R.id.reg_name);
-        TextInputEditText reg_email = root.findViewById(R.id.reg_email);
-        TextInputEditText reg_password = root.findViewById(R.id.reg_pass);
-        TextInputEditText regc_password = root.findViewById(R.id.reg_cpass);
-
-        String name= reg_name.getText().toString().trim();
-        String email = reg_email.getText().toString().trim();
-        String password = reg_password.getText().toString().trim();
-        String c_password = regc_password.getText().toString().trim();
-/*
-        Call <signUp> call = RetrofitClient
-                .getInstance()
-                .getApi().userSignup(name,email, password,c_password);
-*/
-
         reg_confirm = this.findViewById(R.id.reg_confirm);
+        addImage = this.findViewById(R.id.addImage);
+        img = this.findViewById(R.id.profile_image);
 
-        reg_confirm.setOnClickListener(new View.OnClickListener() {
+        addImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, MainDashboard.class);
-                root.startActivity(intent);
+                openGalery();
+            }
+        });
+
+        reg_confirm.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(View view) {
+                TextInputEditText regname = root.findViewById(R.id.reg_name);
+                TextInputEditText regemail = root.findViewById(R.id.reg_email);
+                TextInputEditText regpass = root.findViewById(R.id.reg_pass);
+                TextInputEditText regcpass = root.findViewById(R.id.reg_cpass);
+
+                String name= regname.getText().toString().trim();
+                String email = regemail.getText().toString().trim();
+                String password = regpass.getText().toString().trim();
+                String c_password = regcpass.getText().toString().trim();
+                //CONVERT
+                //name
+                RequestBody bname = RequestBody.create(MediaType.parse("multipart/form-data"), name);
+                //email
+                RequestBody bemail = RequestBody.create(MediaType.parse("multipart/form-data"), email);
+                //password
+                RequestBody bpassword = RequestBody.create(MediaType.parse("multipart/form-data"), password);
+                //cpassword
+                RequestBody bcpassword = RequestBody.create(MediaType.parse("multipart/form-data"), c_password);
+
+                //img
+                MultipartBody.Part body = null;
+                if(postPath != null){
+                    File file = new File(postPath);
+                    RequestBody requestFile = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+                    body = MultipartBody.Part.createFormData("img", file.getName(), requestFile);
+                }
+
+                Call<logInResponse> call = RetrofitClient
+                        .getInstance()
+                        .getApi().signUp(bname,bemail,bpassword,bcpassword, body);
+                call.enqueue(new Callback<logInResponse>() {
+                    @Override
+                    public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
+                        if(response.body().getToken()!=null){
+                            UserDataServer.TOKEN = response.body().getToken();
+                        }
+                        Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                        if(response.body().getMessage().equals("sugoi")){
+                            Intent intent = new Intent(root, MainDashboard.class);
+                            root.startActivity(intent);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<logInResponse> call, Throwable t) {
+                        Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
     }
+    public void openGalery(){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI);
+        startActivityForResult(gallery, PICK_IMAGE);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
 
-
+        if(requestCode == PICK_IMAGE){
+            if(resultCode == RESULT_OK){
+                ClipData clipdata = data.getClipData();
+                if(clipdata == null){
+                    imagenUri = data.getData();
+                    Uri uri = data.getData();
+                    File file = new File(uri.getPath());//create path from uri
+                    final String[] split = file.getPath().split(":");//split the path.
+                    postPath = file.getPath().substring(4);
+                    Toast.makeText(getApplicationContext(), postPath, Toast.LENGTH_LONG).show();
+                }
+                img.setImageURI(imagenUri);
+            }
+            else
+                Toast.makeText(getApplicationContext(), "cancelado", Toast.LENGTH_LONG).show();
+        }
+    }
 }
