@@ -12,6 +12,7 @@ import java.util.List;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -47,6 +48,16 @@ public interface Api {
     @Multipart
     @PUT("user/edAvatar")
     Call<logInResponse> edAvatar(@Header("x-access-token") String auth, @Part MultipartBody.Part part);
+
+    @FormUrlEncoded
+    @PUT("user/edit")
+    Call<logInResponse> edUser(@Header("x-access-token") String auth,
+                               @Field("name") String name,
+                               @Field("email") String email,
+                               @Field("password") String password,
+                               @Field("confirm_password") String confirm_password);
+    @DELETE("user/delete")
+    Call<logInResponse> delUser(@Header("x-access-token") String auth);
 
     @GET("res")
     Call<ArrayList<structRests>> getRests();

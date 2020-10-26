@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".displayProfile">
 
-
-
     <RelativeLayout
         android:background="#292323"
         android:layout_width="match_parent"
@@ -50,16 +48,15 @@
                 android:id="@+id/myAvatar"
                 android:layout_width="220dp"
                 android:layout_height="220dp"
-                android:src="@drawable/userprofile"
                 android:layout_marginStart="120dp"
-                android:layout_marginTop="120dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="120dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                android:src="@drawable/userprofile"
                 app:civ_border_color="@color/darkgray"
                 app:civ_border_width="2dp"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/edAvatar"
@@ -117,7 +114,7 @@
                 app:strokeColor="@color/white" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
+                android:id="@+id/deleteUser"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="176dp"

@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
-        <activity android:name=".dataMenu"></activity>
+        <activity android:name=".displayDeleteUser"></activity>
+        <activity android:name=".dataMenu" />
         <activity android:name=".editUser" />
         <activity android:name=".createMyRest" />
         <activity android:name=".editMyRest" />

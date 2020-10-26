@@ -47,7 +47,7 @@ public class displayProfile extends AppCompatActivity {
     private String name,email,pass,cpass;
 
     private Button edButton;
-    private FloatingActionButton edAvatar;
+    private FloatingActionButton edAvatar, delUser;
     private displayProfile root = this;
 
     private CircleImageView prof;
@@ -92,12 +92,14 @@ public class displayProfile extends AppCompatActivity {
     private void loadComponents(){
         edButton = this.findViewById(R.id.edit_info);
         edAvatar = this.findViewById(R.id.edAvatar);
+        delUser = this.findViewById(R.id.deleteUser);
 
         edButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(root, editUser.class);
-
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
                 root.startActivity(intent);
             }
         });
@@ -106,6 +108,14 @@ public class displayProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openGalery();
+            }
+        });
+
+        delUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(root, displayDeleteUser.class);
+                root.startActivity(intent);
             }
         });
 
