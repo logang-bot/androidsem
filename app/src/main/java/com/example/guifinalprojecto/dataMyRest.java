@@ -110,7 +110,8 @@ public class dataMyRest extends AppCompatActivity {
         Lmenus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, editMyRest.class);
+                Intent intent = new Intent(root, listMyMenus.class);
+                intent.putExtra("idRest", idRest);
                 root.startActivity(intent);
             }
         });
