@@ -59,7 +59,7 @@
             app:layout_constraintTop_toBottomOf="@+id/menu_image" />
 
         <Button
-            android:id="@+id/addImage"
+            android:id="@+id/new_imageR"
             android:layout_width="178dp"
             android:layout_height="59dp"
             android:layout_marginStart="116dp"
@@ -169,10 +169,52 @@
                 android:textColorHint="@color/white" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColorHint="#ffffff"
+            android:theme="@style/myEditTextStyle"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+            tools:layout_editor_absoluteX="58dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/new_logR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:hint="Log"
+                android:inputType="text"
+                android:textColor="#ffffff"
+                android:textColorHint="@color/white" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColorHint="#ffffff"
+            android:theme="@style/myEditTextStyle"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+            tools:layout_editor_absoluteX="58dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/new_latR"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@android:color/transparent"
+                android:hint="Lat"
+                android:inputType="text"
+                android:textColor="#ffffff"
+                android:textColorHint="@color/white" />
 
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/reg_confirm"
+            android:id="@+id/newR_confirm"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -188,7 +230,7 @@
             app:fabCustomSize="80dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addImage">
+            app:layout_constraintTop_toBottomOf="@+id/new_imageR">
 
         </com.google.android.material.floatingactionbutton.FloatingActionButton>
     </androidx.constraintlayout.widget.ConstraintLayout>
