@@ -89,6 +89,12 @@ public class displayProfile extends AppCompatActivity {
         loadComponents();
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(root, MainDashboard.class);
+        root.startActivity(intent);
+    }
+
     private void loadComponents(){
         edButton = this.findViewById(R.id.edit_info);
         edAvatar = this.findViewById(R.id.edAvatar);

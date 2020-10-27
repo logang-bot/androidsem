@@ -59,6 +59,9 @@ public interface Api {
     @DELETE("user/delete")
     Call<logInResponse> delUser(@Header("x-access-token") String auth);
 
+    @GET("res/search")
+    Call<ArrayList<structRests>> getSearchRest(@Query("word") String word);
+
     @GET("res")
     Call<ArrayList<structRests>> getRests();
 
