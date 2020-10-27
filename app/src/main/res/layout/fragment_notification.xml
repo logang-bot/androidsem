@@ -7,13 +7,13 @@
     tools:context=".HomeFragment"
     android:background="#292323">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/mysearchRest"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:backgroundTint="#ffffff"
             android:src="@drawable/ic_baseline_search_24"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,6 +59,7 @@
         android:id="@+id/mysearchRest"
         android:layout_width="match_parent"
         android:layout_height="635dp"
+        android:layout_marginTop="5dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

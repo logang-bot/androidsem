@@ -82,6 +82,9 @@ public interface Api {
                                 @Field("lat") String latR,
                                 @Query("id") String idRest);
 
+    @GET("menu/search")
+    Call<ArrayList<structMenu>> getSearchMenu(@Query("word") String word);
+
     @GET("menu")
     Call<ArrayList<structMenu>> getMenu(@Query("idRes") String idRes);
 

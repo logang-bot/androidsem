@@ -1,5 +1,6 @@
 package com.example.guifinalprojecto;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,27 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import com.example.guifinalprojecto.adapters.ResAdapter;
+import com.example.guifinalprojecto.adapters.searchMenuAdapter;
+import com.example.guifinalprojecto.adapters.structMenu;
+import com.example.guifinalprojecto.adapters.structRests;
+import com.example.guifinalprojecto.interfaces.RetrofitClient;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputEditText;
+
+import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +36,9 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class MoreFragment extends Fragment {
+
+    private MoreFragment root = this;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,5 +85,56 @@ public class MoreFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_more, container, false);
+    }
+    ////////my code starts here
+    @Override
+    public void onStart(){
+        super.onStart();
+        //to avoid keyboard moves fragment up
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        //--to avoid keyboard moves fragment up
+        GridView listM = this.getActivity().findViewById(R.id.mysearchMenu);
+
+        FloatingActionButton search = this.getActivity().findViewById(R.id.searchMsearchbtn);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextInputEditText searchText = root.getActivity().findViewById(R.id.searchMsearchfield);
+                String searchword = searchText.getText().toString().trim();
+                Call<ArrayList<structMenu>> call = RetrofitClient
+                        .getInstance()
+                        .getApi().getSearchMenu(searchword);
+
+                call.enqueue(new Callback<ArrayList<structMenu>>() {
+                    @Override
+                    public void onResponse(Call<ArrayList<structMenu>> call, Response<ArrayList<structMenu>> response) {
+
+                        ArrayList<structMenu> data = response.body();
+                        searchMenuAdapter adapter = new searchMenuAdapter(data, getContext());
+                        listM.setAdapter(adapter);
+
+                        /*listR.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                //animation
+                                Animation animation1 = new AlphaAnimation(0.3f, 1.0f);
+                                animation1.setDuration(4000);
+                                view.startAnimation(animation1);
+                                //animation
+                                Intent intent = new Intent(getContext(), listMenus.class); //cambiar vista
+                                intent.putExtra("idRest", data.get(i).get_id());
+                                root.startActivity(intent);
+                                Toast.makeText(getContext(),data.get(i).getNit() , Toast.LENGTH_LONG).show();
+                            }
+                        });*/
+                    }
+                    @Override
+                    public void onFailure(Call<ArrayList<structMenu>> call, Throwable t) {
+                        Toast.makeText(getContext(), t.getMessage(),Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
     }
 }

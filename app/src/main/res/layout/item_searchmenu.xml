@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="270dp"
+        android:layout_height="310dp"
+        app:cardCornerRadius="25dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#121111">
+
+            <ImageView
+                android:id="@+id/searchMmenuimg"
+                android:layout_width="match_parent"
+                android:layout_height="190dp"
+                android:layout_marginTop="10dp"
+                android:src="@android:drawable/ic_menu_gallery"
+                app:layout_constraintBottom_toTopOf="@+id/searchMnombre"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/searchMnombre"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/amita"
+                android:textAlignment="textStart"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/searchMlogoR"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchMmenuimg" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/searchMlogoR"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginBottom="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/searchMnameRes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchMnombre" />
+
+            <TextView
+                android:id="@+id/searchMnameRes"
+                android:layout_width="220dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="1dp"
+                android:fontFamily="@font/amatic_sc"
+                android:textColor="#FFFFFF"
+                android:textSize="30sp"
+                android:layout_marginStart="5dp"
+                app:layout_constraintBottom_toTopOf="@+id/searchMprecio"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/searchMlogoR"
+                app:layout_constraintTop_toBottomOf="@+id/searchMnombre" />
+
+            <TextView
+                android:id="@+id/searchMprecio"
+                android:layout_width="220dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="1dp"
+                android:layout_marginBottom="7dp"
+                android:fontFamily="@font/amatic_sc"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/searchMlogoR"
+                app:layout_constraintTop_toBottomOf="@+id/searchMnameRes" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
