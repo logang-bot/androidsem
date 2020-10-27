@@ -89,7 +89,7 @@ public interface Api {
     Call<ArrayList<structMenu>> getMenu(@Query("idRes") String idRes);
 
     @GET("menu/data")
-    Call<structMenu> getDataMenu(@Query("idRes") String idRes);
+    Call<structMenu> getDataMenu(@Query("idMenu") String idMenu);
 
 
 }

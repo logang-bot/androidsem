@@ -25,18 +25,18 @@ import retrofit2.Response;
 
 
 public class dataMenu extends AppCompatActivity {
-    public int contador = 0;
+    public int contador = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_menu);
         Bundle bundle = this.getIntent().getExtras();
-        String idRes = bundle.getString("idRes");
+        String idMenu = bundle.getString("idMenu");
 
-        Toast.makeText(this," idRest = "+idRes.toString(), Toast.LENGTH_LONG).show();
+        Toast.makeText(this," idMenu = "+idMenu.toString(), Toast.LENGTH_LONG).show();
         Call<structMenu> call = RetrofitClient
                 .getInstance()
-                .getApi().getDataMenu(idRes);
+                .getApi().getDataMenu(idMenu);
 
 
         call.enqueue(new Callback<structMenu>() {
@@ -44,7 +44,7 @@ public class dataMenu extends AppCompatActivity {
             public void onResponse(Call <structMenu> call, Response <structMenu> response) {
                 structMenu data = response.body();
                 ImageView image_food= findViewById(R.id.image_food);
-                TextView TitleRest= findViewById(R.id.title_res_onmenu);
+                TextView TitleRest= findViewById(R.id.title_res_onmenuData);
                 TextView name_food= findViewById(R.id.name_food);
                 TextView precio_food= findViewById(R.id.precio_food);
                 TextView food_desc=findViewById(R.id.food_desc);
