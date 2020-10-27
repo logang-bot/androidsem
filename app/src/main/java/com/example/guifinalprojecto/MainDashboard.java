@@ -24,6 +24,7 @@ import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -51,6 +52,9 @@ public class MainDashboard extends AppCompatActivity{
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        //to avoid keyboard moves fragment up
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+        //--to avoid keyboard moves fragment up
 
         //bottomnav
         bottomNavigationView=findViewById(R.id.bottomnav);
@@ -105,14 +109,21 @@ public class MainDashboard extends AppCompatActivity{
                         " number = "+number.toString(), Toast.LENGTH_LONG).show();*/
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(root, MainActivity.class);
+        root.startActivity(intent);
+    }
+
     //bottomnav
     private BottomNavigationView.OnNavigationItemSelectedListener bottomnavmethod = new
             BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
+                    //to avoid keyboard moves fragment up
+                    getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+                    //--to avoid keyboard moves fragment up
                     Fragment fragment = null;
-
                     switch (item.getItemId()){
                         case R.id.home:
                             fragment = new HomeFragment();

@@ -71,4 +71,9 @@ public class listMenus extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(root, MainDashboard.class);
+        root.startActivity(intent);
+    }
 }

@@ -23,10 +23,20 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@android:drawable/ic_menu_gallery" />
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgR"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="203dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/nameRes"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:layout_marginStart="78dp"
                 android:fontFamily="@font/amatic_sc"
                 android:textColor="#FFFFFF"
                 android:textSize="30sp"
@@ -39,11 +49,12 @@
                 android:layout_height="20dp"
                 android:layout_marginTop="1dp"
                 android:layout_marginBottom="10dp"
+                android:layout_marginStart="78dp"
                 android:fontFamily="@font/amatic_sc"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imgR"
                 app:layout_constraintTop_toBottomOf="@+id/nameRes" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

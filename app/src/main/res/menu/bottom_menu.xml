@@ -6,10 +6,10 @@
         android:icon="@drawable/ic_baseline_local_dining_24"/>
     <item
         android:id="@+id/notifications"
-        android:title="Notifications"
-        android:icon="@drawable/ic_baseline_notifications_24"/>
+        android:title="Search Restaurants"
+        android:icon="@drawable/ic_baseline_youtube_searched_for_24"/>
     <item
         android:id="@+id/more"
-        android:title="More"
+        android:title="Search Menus"
         android:icon="@drawable/ic_baseline_apps_24"/>
 </menu>

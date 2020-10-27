@@ -6,9 +6,14 @@
         <item>@font/aladin</item>
         <item>@font/aldrich</item>
         <item>@font/alex_brush</item>
+        <item>@font/alfa_slab_one</item>
         <item>@font/amatic_sc</item>
         <item>@font/amatic_sc_bold</item>
+
         <item>@font/anton</item>
+
+        <item>@font/amita</item>
+
         <item>@font/boogaloo</item>
     </array>
 </resources>

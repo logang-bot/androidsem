@@ -131,18 +131,5 @@ public class HomeFragment extends Fragment {
                 Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-        /*ArrayList<structRests> datos = new ArrayList<>();
-        for(int i=0 ; i<1 ; i++){
-            //Toast.makeText(getContext(), "entro", Toast.LENGTH_LONG).show();
-            structRests item = new structRests("","","","","","","","","","","");
-            item.setNombre(data.get(i).getNombre());
-            item.setCalle(data.get(i).getCalle());
-            //item.setLogo("");
-            datos.add(item);
-        }
-
-        HomeAdapter adapter = new HomeAdapter(datos, this.getContext());
-        //ArrayAdapter<String> adapter= new ArrayAdapter(this.getContext(), android.R.layout.simple_list_item_1, datos);
-        list.setAdapter(adapter);*/
     }
 }

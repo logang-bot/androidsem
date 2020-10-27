@@ -59,6 +59,9 @@ public interface Api {
     @DELETE("user/delete")
     Call<logInResponse> delUser(@Header("x-access-token") String auth);
 
+    @GET("res/search")
+    Call<ArrayList<structRests>> getSearchRest(@Query("word") String word);
+
     @GET("res")
     Call<ArrayList<structRests>> getRests();
 
@@ -67,6 +70,20 @@ public interface Api {
 
     @GET("res/mydata")
     Call<structRests> getMydataRes(@Header("x-access-token") String auth,@Query("id") String idRes);
+
+    @FormUrlEncoded
+    @PUT("res/edit")
+    Call<structRests> edRest(@Header("x-access-token") String auth,
+                             @Field("nombre") String nombreR,
+                               @Field("nit") String nitR,
+                               @Field("calle") String dirR,
+                               @Field("telefono") String telR,
+                               @Field("log") String logR,
+                                @Field("lat") String latR,
+                                @Query("id") String idRest);
+
+    @GET("menu/search")
+    Call<ArrayList<structMenu>> getSearchMenu(@Query("word") String word);
 
     @GET("menu")
     Call<ArrayList<structMenu>> getMenu(@Query("idRes") String idRes);
