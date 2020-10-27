@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/actor</item>
+        <item>@font/advent_pro_thin</item>
         <item>@font/aladin</item>
         <item>@font/aldrich</item>
         <item>@font/alex_brush</item>
         <item>@font/amatic_sc</item>
         <item>@font/amatic_sc_bold</item>
+        <item>@font/anton</item>
         <item>@font/boogaloo</item>
     </array>
 </resources>

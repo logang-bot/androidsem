@@ -29,7 +29,7 @@
 
         android:layout_marginTop="20dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="adasd"
+        android:text=""
 
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -46,7 +46,7 @@
 
         android:layout_marginTop="1dp"
         android:fontFamily="sans-serif-condensed-light"
-        android:text="sdasdsad"
+        android:text=""
 
         android:textAlignment="center"
         android:textColor="@color/black"
