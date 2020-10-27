@@ -11,6 +11,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ import retrofit2.Response;
 
 public class listMyRests extends AppCompatActivity {
     private listMyRests root=this;
+    private Button create_Rest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +85,18 @@ public class listMyRests extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), t.getMessage(),Toast.LENGTH_LONG).show();
             }
         });
+        loadComponents();
     }
+    private void loadComponents(){
+        create_Rest = this.findViewById(R.id.newR);
+        create_Rest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(root, createMyRest.class);
+                root.startActivity(intent);
+            }
+        });
+    }
+
     }
 

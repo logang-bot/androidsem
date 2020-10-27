@@ -82,6 +82,17 @@ public interface Api {
                                 @Field("lat") String latR,
                                 @Query("id") String idRest);
 
+    @POST("res/create")
+    Call<structRests> createRest(
+            @Header("x-access-token") String auth,
+            @Part("nombre") RequestBody nombreR,
+            @Part("nit") RequestBody nitR,
+            @Part("calle") RequestBody dirR,
+            @Part("telefono") RequestBody telR,
+            @Part("log") RequestBody logR,
+            @Part("lat") RequestBody latR
+    );
+
     @GET("menu/search")
     Call<ArrayList<structMenu>> getSearchMenu(@Query("word") String word);
 
