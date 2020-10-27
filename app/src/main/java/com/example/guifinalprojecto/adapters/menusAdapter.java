@@ -43,6 +43,7 @@ public class menusAdapter  extends BaseAdapter {
         view = LayoutInflater.from(contextM).inflate(R.layout.item_menus,null);
         ImageView imgMenu=(ImageView) view.findViewById(R.id.menu_image);
         TextView nombreMenu=(TextView) view.findViewById(R.id.item_name_menu);
+        TextView precioMenu = (TextView) view.findViewById(R.id.item_precio_menu);
         nombreMenu.setText(listMenus.get(i).getNombre());
 
         /*Glide.with(contextM)

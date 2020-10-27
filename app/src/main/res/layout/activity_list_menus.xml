@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".listMenus">
+
     <RelativeLayout
-        android:background="#4E6A5C"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#292323">
+
         <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/aux"
             android:layout_width="match_parent"
             android:layout_height="65dp"
             android:theme="@style/Theme.GUIfinalProjecto.AppBarOverlay">
@@ -19,16 +22,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#292323"
-                app:popupTheme="@style/Theme.GUIfinalProjecto.PopupOverlay" >
+                app:popupTheme="@style/Theme.GUIfinalProjecto.PopupOverlay">
 
                 <TextView
+                    android:id="@+id/title_res_onmenu"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:textAlignment="center"
                     android:fontFamily="@font/alex_brush"
                     android:text="Restaurant ?"
-
-                    android:textSize="37sp" />
+                    android:textAlignment="center"
+                    android:textSize="37sp"
+                    android:textStyle="bold" />
 
 
             </androidx.appcompat.widget.Toolbar>
@@ -38,14 +42,13 @@
             android:id="@+id/g_menu"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="65dp"
+            android:layout_marginTop="80dp"
             android:layout_marginBottom="60dp"
             android:columnWidth="100dp"
             android:numColumns="2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0" />
-
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
