@@ -5,5 +5,245 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".editMyRest">
+    <RelativeLayout
+        android:background="#31504D"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:theme="@style/Theme.GUIfinalProjecto.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#121515"
+                >
+
+                <TextView
+                    android:layout_width="375dp"
+                    android:layout_height="wrap_content"
+                    android:text="Edit my Restaurant"
+                    android:fontFamily="@font/alex_brush"
+                    android:textAlignment="center"
+                    android:textSize="37sp"
+                    android:textColor="#ffff"/>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="65dp">
+
+            <ImageView
+                android:id="@+id/ed_fotoR"
+                android:layout_width="230dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.412"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ed_logoR"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="124dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.81"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/buttonEdit_fotoR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="90dp"
+                android:backgroundTint="#ffffff"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="-15dp" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/buttonEdit_logoR"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="45dp"
+                android:backgroundTint="#ffffff"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonEdit_fotoR" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="220dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#ffffff"
+                android:theme="@style/myEditTextStyle"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="58dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_nombreR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Nombre de Restaurant"
+                    android:inputType="text"
+                    android:textColor="#ffffff"
+                    android:textColorHint="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#ffffff"
+                android:theme="@style/myEditTextStyle"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                tools:layout_editor_absoluteX="58dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_nitR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Nit"
+                    android:inputType="text"
+                    android:textColor="#ffffff"
+                    android:textColorHint="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#ffffff"
+                android:theme="@style/myEditTextStyle"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                tools:layout_editor_absoluteX="58dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_dirR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Dirección"
+                    android:inputType="text"
+                    android:textColor="#ffffff"
+                    android:textColorHint="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#ffffff"
+                android:theme="@style/myEditTextStyle"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+                tools:layout_editor_absoluteX="58dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_telR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Teléfono"
+                    android:inputType="text"
+                    android:textColor="#ffffff"
+                    android:textColorHint="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#ffffff"
+                android:theme="@style/myEditTextStyle"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+                tools:layout_editor_absoluteX="58dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_logR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Log"
+                    android:inputType="text"
+                    android:textColor="#ffffff"
+                    android:textColorHint="@color/white"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="527dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColorHint="#ffffff"
+                android:theme="@style/myEditTextStyle"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+                tools:layout_editor_absoluteX="58dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ed_latR"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="Lat"
+                    android:inputType="text"
+                    android:textColor="#ffffff"
+                    android:textColorHint="@color/white"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="527dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/editRest"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:backgroundTint="#ffffff"
+                android:fontFamily="@font/aldrich"
+                android:text="OK!"
+                app:cornerRadius="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"
+                app:strokeColor="@color/white"
+                tools:ignore="MissingConstraints" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

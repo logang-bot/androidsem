@@ -68,6 +68,17 @@ public interface Api {
     @GET("res/mydata")
     Call<structRests> getMydataRes(@Header("x-access-token") String auth,@Query("id") String idRes);
 
+    @FormUrlEncoded
+    @PUT("res/edit")
+    Call<structRests> edRest(@Header("x-access-token") String auth,
+                             @Field("nombre") String nombreR,
+                               @Field("nit") String nitR,
+                               @Field("calle") String dirR,
+                               @Field("telefono") String telR,
+                               @Field("log") String logR,
+                                @Field("lat") String latR,
+                                @Query("id") String idRest);
+
     @GET("menu")
     Call<ArrayList<structMenu>> getMenu(@Query("idRes") String idRes);
 
