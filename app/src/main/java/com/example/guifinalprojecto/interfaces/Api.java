@@ -81,16 +81,16 @@ public interface Api {
                                @Field("log") String logR,
                                 @Field("lat") String latR,
                                 @Query("id") String idRest);
-
+    @FormUrlEncoded
     @POST("res/create")
     Call<structRests> createRest(
             @Header("x-access-token") String auth,
-            @Part("nombre") RequestBody nombreR,
-            @Part("nit") RequestBody nitR,
-            @Part("calle") RequestBody dirR,
-            @Part("telefono") RequestBody telR,
-            @Part("log") RequestBody logR,
-            @Part("lat") RequestBody latR
+            @Field("nombre") String nombreR,
+            @Field("nit") String nitR,
+            @Field("calle") String dirR,
+            @Field("telefono") String telR,
+            @Field("log") String logR,
+            @Field("lat") String latR
     );
 
     @GET("menu/search")
