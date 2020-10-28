@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,6 +43,13 @@ public class listMyMenus extends AppCompatActivity {
         Call<ArrayList<structMenu>> call = RetrofitClient
                 .getInstance()
                 .getApi().getMenu(idRest);
+        Button newMenu = findViewById(R.id.newMenu);
+        newMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), createMyMenu.class);
+            }
+        });
 
         call.enqueue(new Callback<ArrayList<structMenu>>() {
             @Override

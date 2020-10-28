@@ -14,7 +14,7 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/aux"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="75dp"
             android:theme="@style/Theme.GUIfinalProjecto.AppBarOverlay">
 
             <androidx.appcompat.widget.Toolbar
@@ -23,16 +23,14 @@
                 android:layout_height="match_parent"
                 android:background="#292323"
                 app:popupTheme="@style/Theme.GUIfinalProjecto.PopupOverlay">
-
                 <TextView
                     android:id="@+id/title_res_onmenu"
                     android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:fontFamily="@font/alex_brush"
                     android:text="Restaurant ?"
                     android:textAlignment="center"
                     android:textSize="37sp"
-
                     android:textStyle="bold" />
                 <Button
                     android:id="@+id/verInfoRest"
@@ -48,8 +46,6 @@
                     android:text="Ver info"
                     android:textColor="#ffff"
                     android:textSize="10sp"/>
-
-
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
 
