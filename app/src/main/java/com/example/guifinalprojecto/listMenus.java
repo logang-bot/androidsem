@@ -31,6 +31,8 @@ public class listMenus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_menus);
 
+
+
         GridView GridM = findViewById(R.id.g_menu);
         Bundle bundle = this.getIntent().getExtras();
         String idRest = bundle.getString("idRest");
@@ -58,7 +60,7 @@ public class listMenus extends AppCompatActivity {
                         view.startAnimation(animation1);
                         //animation
                         Intent intent = new Intent(getApplicationContext(), dataMenu.class); //cambiar vista
-                        intent.putExtra("idRest", data.get(i).getId_rest());
+                        intent.putExtra("idMenu", data.get(i).get_id());
                         root.startActivity(intent);
                         Toast.makeText(getApplicationContext(),data.get(i).getNombre() , Toast.LENGTH_LONG).show();
                     }
