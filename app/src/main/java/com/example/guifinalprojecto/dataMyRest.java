@@ -119,7 +119,9 @@ public class dataMyRest extends AppCompatActivity {
         delRest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, editMyRest.class);
+                Intent intent = new Intent(root, deleteRest.class);
+                intent.putExtra("idRest", idRest);
+                intent.putExtra("nombreR", Nombre);
                 root.startActivity(intent);
             }
         });

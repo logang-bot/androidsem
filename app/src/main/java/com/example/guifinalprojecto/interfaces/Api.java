@@ -90,6 +90,8 @@ public interface Api {
             @Field("calle") String dirR,
             @Field("telefono") String telR
     );
+    @DELETE("res/delete")
+    Call<structRests> delRest(@Query("id") String idRes);
 
     @GET("menu/search")
     Call<ArrayList<structMenu>> getSearchMenu(@Query("word") String word);
