@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".image_createMyMenu">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mountain"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-111dp">
+
+        <TextView
+            android:id="@+id/mostrarnombreRest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:fontFamily="casual"
+            android:textAlignment="viewEnd"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/teal_200"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/new_logoR"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="151dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            tools:ignore="MissingConstraints"
+            />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-condensed-light"
+
+            android:text="Añadir una imagen para el producto"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/mostrarnombreRest"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <Button
+            android:id="@+id/new_agregarlogoR"
+            android:layout_width="130dp"
+            android:layout_height="59dp"
+            android:layout_marginStart="117dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="117dp"
+            android:backgroundTint="@android:color/transparent"
+            android:text="Agregar"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_logoR" />
+
+        <Button
+            android:id="@+id/new_Sig"
+            android:layout_width="178dp"
+            android:layout_height="59dp"
+            android:backgroundTint="#009688"
+            android:text="Crear producto"
+            android:textColor="#FFFFFF"
+            app:cornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="50dp"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

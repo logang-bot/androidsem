@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
-        <activity android:name=".deleteMyMenu"></activity>
+        <activity android:name=".image_createMyMenu"></activity>
+        <activity android:name=".deleteMyMenu" />
         <activity android:name=".createMyMenu" />
         <activity android:name=".editMyMenu" />
         <activity android:name=".dataMyMenu" />
