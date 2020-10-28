@@ -114,7 +114,9 @@ public class HomeFragment extends Fragment {
                         view.startAnimation(animation1);
                         //animation
                         Intent intent = new Intent(getContext(), listMenus.class);
+
                         intent.putExtra("idRest", data.get(i).get_id());
+                        intent.putExtra("nameRest" , data.get(i).getNombre());
                         getContext().startActivity(intent);
                          /*Intent intent = new Intent(root, MainDashboard.class);
                 intent.putExtra("backupAgentName", root.getApplicationInfo().backupAgentName);
