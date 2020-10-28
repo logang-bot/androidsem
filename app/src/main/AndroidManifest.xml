@@ -16,18 +16,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".createMyMenu"></activity>
+        <activity android:name=".deleteMyMenu"></activity>
+        <activity android:name=".createMyMenu" />
         <activity android:name=".editMyMenu" />
         <activity android:name=".dataMyMenu" />
-
-        <activity android:name=".deleteRest"></activity>
+        <activity android:name=".deleteRest" />
         <activity android:name=".dataRest" />
-        <activity android:name=".editMyRestLocation"></activity>
+        <activity android:name=".editMyRestLocation" />
         <activity android:name=".editMyRestCover" />
         <activity android:name=".createMyRestUbicacion" />
         <activity android:name=".portada_createMyRest" />
-
         <activity android:name=".listMyMenus" />
         <activity android:name=".logo_createMyRest" />
         <activity android:name=".editUser" />
@@ -53,6 +51,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
