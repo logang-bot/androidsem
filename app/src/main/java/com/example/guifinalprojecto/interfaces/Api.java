@@ -82,6 +82,15 @@ public interface Api {
                                 @Field("lat") String latR,
                                 @Query("id") String idRest);
 
+    @Multipart
+    @POST("res/setcover")
+    Call<logInResponse> setcover(@Header("x-access-token") String auth, @Query("id") String idRes, @Part MultipartBody.Part part);
+
+    @Multipart
+    @POST("res/setlogo")
+    Call<logInResponse> setlogo(@Header("x-access-token") String auth, @Query("id") String idRes, @Part MultipartBody.Part part);
+
+
     @POST("res/create")
     Call<structRests> createRest(
             @Header("x-access-token") String auth,
