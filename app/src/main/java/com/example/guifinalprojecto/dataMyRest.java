@@ -24,7 +24,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class dataMyRest extends AppCompatActivity {
-    private String Nombre, Nit, Direccion,Tel,Log,Lat,idRest,imageR,logoR;
+    private String idR, Nombre, Nit, Direccion,Tel,Log,Lat,idRest,imageR,logoR;
     private FloatingActionButton edRest, delRest;
     private Button Lmenus;
     private dataMyRest root=this;
@@ -43,6 +43,7 @@ public class dataMyRest extends AppCompatActivity {
             @Override
             public void onResponse(Call<structRests> call, Response<structRests> response) {
                 structRests data = response.body();
+                idR = data.get_id();
                 Nombre =data.getNombre();
                 Nit =data.getNit();
                 Direccion =data.getCalle();
@@ -85,6 +86,12 @@ public class dataMyRest extends AppCompatActivity {
         loadComponents();
     }
 
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(root, listMyRests.class);
+        root.startActivity(intent);
+    }
+
     private void loadComponents(){
         edRest = this.findViewById(R.id.editRest);
         Lmenus = this.findViewById(R.id.verMenus);
@@ -94,6 +101,7 @@ public class dataMyRest extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(root, editMyRest.class);
+                intent.putExtra("idR", idR);
                 intent.putExtra("nombreR", Nombre);
                 intent.putExtra("nitR", Nit);
                 intent.putExtra("dirR", Direccion);
