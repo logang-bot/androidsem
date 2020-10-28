@@ -19,7 +19,7 @@
                 android:id="@+id/toolbarR"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#273937"
+                android:background="#151212"
                 >
 
                 <TextView
@@ -36,15 +36,18 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="65dp">
+            android:layout_marginTop="65dp"
+            android:background="#586E6C"
+            >
 
             <ImageView
                 android:id="@+id/imgRestP"
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:layout_marginLeft="5dp"
+                android:layout_height="235dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginRight="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="MissingConstraints" />
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -52,7 +55,7 @@
                 android:layout_width="130dp"
                 android:layout_height="130dp"
                 android:layout_marginStart="120dp"
-                android:layout_marginTop="175dp"
+                android:layout_marginTop="180dp"
                 android:layout_marginEnd="120dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +65,8 @@
                 android:id="@+id/propietarioRestC"
                 android:layout_width="50dp"
                 android:layout_height="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="90dp"
                 android:fontFamily="casual"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
@@ -75,11 +78,11 @@
                 android:id="@+id/propietarioRest"
                 android:layout_width="wrap_content"
                 android:layout_height="30dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="90dp"
                 android:fontFamily="@font/amarante"
                 android:text="Propietario  :"
-                android:textColor="#4B817C"
+                android:textColor="#19201F"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgRestP"
@@ -105,7 +108,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Nit  :"
-                android:textColor="#4B817C"
+                android:textColor="#19201F"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/propietarioRest"
@@ -119,7 +122,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Direccion  :"
-                android:textColor="#4B817C"
+                android:textColor="#19201F"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -132,7 +135,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Telefono  :"
-                android:textColor="#4B817C"
+                android:textColor="#19201F"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -145,7 +148,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Log  :"
-                android:textColor="#4B817C"
+                android:textColor="#19201F"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -158,7 +161,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Lat  :"
-                android:textColor="#4B817C"
+                android:textColor="#19201F"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -171,7 +174,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Fecha de Registro  :"
-                android:textColor="#4B817C"
+                android:textColor="#19201F"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -240,17 +243,38 @@
                 android:id="@+id/verMenus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="165dp"
+                android:layout_marginStart="35dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="158dp"
                 android:layout_marginBottom="40dp"
-                android:backgroundTint="#273937"
+                android:backgroundTint="#151212"
                 android:fontFamily="@font/boogaloo"
                 android:text="ATRÁS"
                 android:textColor="#ffff"
                 android:textSize="17sp"
                 app:cornerRadius="45dp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/verUbi"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fechaRest"
+                tools:ignore="MissingConstraints" />
+            <Button
+                android:id="@+id/verUbi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="#151212"
+                android:fontFamily="@font/boogaloo"
+                android:text="UBICACIÓN"
+                android:textColor="#ffff"
+                android:textSize="17sp"
+                app:cornerRadius="45dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/verMenus"
                 app:layout_constraintTop_toBottomOf="@+id/fechaRest"
                 tools:ignore="MissingConstraints" />
 
