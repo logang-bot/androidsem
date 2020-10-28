@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GUIfinalProjecto"
         android:usesCleartextTraffic="true">
-        <activity android:name=".listMyMenus"></activity>
+        <activity android:name=".dataMyMenu"></activity>
+        <activity android:name=".listMyMenus" />
         <activity android:name=".logo_createMyRest" />
         <activity android:name=".editUser" />
         <activity android:name=".createMyRest" />
