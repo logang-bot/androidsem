@@ -88,9 +88,7 @@ public interface Api {
             @Field("nombre") String nombreR,
             @Field("nit") String nitR,
             @Field("calle") String dirR,
-            @Field("telefono") String telR,
-            @Field("log") String logR,
-            @Field("lat") String latR
+            @Field("telefono") String telR
     );
 
     @GET("menu/search")

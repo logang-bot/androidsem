@@ -46,17 +46,13 @@ public class createMyRest extends AppCompatActivity {
                 TextInputEditText newNitR = root.findViewById(R.id.new_nitR);
                 TextInputEditText newDirR = root.findViewById(R.id.new_dirR);
                 TextInputEditText newTelR = root.findViewById(R.id.new_teR);
-                TextInputEditText newLogR = root.findViewById(R.id.new_logR);
-                TextInputEditText newLatR = root.findViewById(R.id.new_latR);
                 String nombre = newNombreR.getText().toString().trim();
                 String nit = newNitR.getText().toString().trim();
                 String calle = newDirR.getText().toString().trim();
                 String tel = newTelR.getText().toString().trim();
-                String log= newLogR.getText().toString().trim();
-                String lat= newLatR.getText().toString().trim();
                 Call<structRests> call = RetrofitClient
                         .getInstance()
-                        .getApi().createRest(UserDataServer.TOKEN, nombre, nit, calle, tel, log, lat);
+                        .getApi().createRest(UserDataServer.TOKEN, nombre, nit, calle, tel);
                 call.enqueue(new Callback<structRests>() {
                     @Override
                     public void onResponse(Call<structRests> call, Response<structRests> response) {

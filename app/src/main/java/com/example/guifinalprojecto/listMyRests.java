@@ -97,6 +97,11 @@ public class listMyRests extends AppCompatActivity {
             }
         });
     }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(root, MainDashboard.class);
+        root.startActivity(intent);
+    }
 
     }
 
