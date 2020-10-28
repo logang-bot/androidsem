@@ -70,6 +70,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/name_food" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text=" bs"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintStart_toEndOf="@+id/precio_food"
+                app:layout_constraintTop_toBottomOf="@+id/name_food" />
+
             <ImageView
 
                 android:id="@+id/image_food"
@@ -123,7 +133,6 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/boogaloo"
                 android:padding="20dp"
-                android:text="1"
                 android:textColor="#433B3B"
                 android:textSize="20dp"
                 android:textStyle="bold"

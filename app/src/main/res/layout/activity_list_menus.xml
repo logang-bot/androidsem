@@ -26,7 +26,7 @@
 
                 <TextView
                     android:id="@+id/title_res_onmenu"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:fontFamily="@font/alex_brush"
                     android:text="Restaurant ?"
@@ -34,6 +34,20 @@
                     android:textSize="37sp"
 
                     android:textStyle="bold" />
+                <Button
+                    android:id="@+id/verInfoRest"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_info_24"
+                    android:backgroundTint="#4B817C"
+                    app:cornerRadius="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="60dp"
+                    android:drawableLeft="@drawable/round_info_24"
+                    android:fontFamily="@font/boogaloo"
+                    android:text="Ver info"
+                    android:textColor="#ffff"
+                    android:textSize="10sp"/>
 
 
             </androidx.appcompat.widget.Toolbar>

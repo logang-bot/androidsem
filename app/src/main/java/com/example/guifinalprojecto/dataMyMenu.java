@@ -28,6 +28,13 @@ public class dataMyMenu extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras();
         String idMenu = bundle.getString("idMenu");
+        String nameRest = bundle.getString("nameRest");
+
+        TextView title_res = findViewById(R.id.title_res_onMyMenu);
+        title_res.setText(nameRest);
+
+
+
 
         Toast.makeText(this," idMenu = "+idMenu.toString(), Toast.LENGTH_LONG).show();
         Call<structMenu> call = RetrofitClient
@@ -40,23 +47,16 @@ public class dataMyMenu extends AppCompatActivity {
             public void onResponse(Call <structMenu> call, Response<structMenu> response) {
                 structMenu data = response.body();
                 ImageView image_Myfood= findViewById(R.id.image_Myfood);
-                TextView TitleMyRest= findViewById(R.id.title_res_onMyMenu);
-                TextView name_Myfood= findViewById(R.id.name_Myfood);
+
+
                 TextView precio_Myfood= findViewById(R.id.precio_Myfood);
                 TextView food_Mydesc=findViewById(R.id.food_Mydesc);
-
-                TitleMyRest.setText(data.getNombre());
+                TextView name_Myfood= findViewById(R.id.name_Myfood);
                 name_Myfood.setText(data.getNombre());
+
                 precio_Myfood.setText(data.getPrecio());
                 food_Mydesc.setText(data.getDescripcion());
-
-                FloatingActionButton add_to_cart = findViewById(R.id.añadir_pedido);
-                add_to_cart.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Toast.makeText(getApplicationContext(),"Añadido al carrito",Toast.LENGTH_LONG).show();
-                    }
-                });
+                name_Myfood.setText(data.getNombre());
 
                 FloatingActionButton delete_menu = findViewById(R.id.elimMenu);
                 FloatingActionButton edit_menu = findViewById(R.id.editMenu);

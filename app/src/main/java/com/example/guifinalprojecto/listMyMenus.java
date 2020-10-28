@@ -9,6 +9,7 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.guifinalprojecto.adapters.menusAdapter;
@@ -22,7 +23,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class listMyMenus extends AppCompatActivity {
-    private String idRest;
+    private String idRest , nameRest;
 
     private listMyMenus root=this;
     @Override
@@ -31,7 +32,11 @@ public class listMyMenus extends AppCompatActivity {
         setContentView(R.layout.activity_list_my_menus);
         Bundle bundle = this.getIntent().getExtras();
         idRest = bundle.getString("idRest");
+        nameRest = bundle.getString("nameRest");
         Toast.makeText(this," idRest = "+idRest.toString(), Toast.LENGTH_LONG).show();
+
+        TextView titleRest = findViewById(R.id.title_my_menus);
+        titleRest.setText(nameRest);
 
         GridView GridMyMenu = findViewById(R.id.g_my_menu);
         Call<ArrayList<structMenu>> call = RetrofitClient
@@ -57,6 +62,7 @@ public class listMyMenus extends AppCompatActivity {
                         //animation
                         Intent intent = new Intent(getApplicationContext(), dataMyMenu.class); //cambiar vista
                         intent.putExtra("idMenu", data.get(i).get_id());
+                        intent.putExtra("nameRest",nameRest);
                         root.startActivity(intent);
                         Toast.makeText(getApplicationContext(),data.get(i).getNombre() , Toast.LENGTH_LONG).show();
                     }

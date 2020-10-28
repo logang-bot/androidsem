@@ -41,7 +41,8 @@ public class dataMenu extends AppCompatActivity {
                 .getInstance()
                 .getApi().getDataMenu(idMenu);
 
-
+        TextView food_cant_num=findViewById(R.id.food_cant_num);
+        food_cant_num.setText(contador+"");
         call.enqueue(new Callback<structMenu>() {
             @Override
             public void onResponse(Call <structMenu> call, Response <structMenu> response) {
@@ -51,14 +52,14 @@ public class dataMenu extends AppCompatActivity {
                 TextView name_food= findViewById(R.id.name_food);
                 TextView precio_food= findViewById(R.id.precio_food);
                 TextView food_desc=findViewById(R.id.food_desc);
-                TextView food_cant_num=findViewById(R.id.food_cant_num);
+
                 Button plus = findViewById(R.id.plus_food); // boton para aumentar la cantidad
                 Button dism= findViewById(R.id.dism_food);
 
                 name_food.setText(data.getNombre());
                 precio_food.setText(data.getPrecio());
                 food_desc.setText(data.getDescripcion());
-                food_cant_num.setText(data.getContador());
+
                 FloatingActionButton add_to_cart = findViewById(R.id.añadir_pedido);
                 add_to_cart.setOnClickListener(new View.OnClickListener() {
                     @Override

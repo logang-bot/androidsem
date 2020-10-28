@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -50,6 +51,14 @@ public class listMenus extends AppCompatActivity {
 
         TextView titleREst = findViewById(R.id.title_res_onmenu);
         titleREst.setText(nameRest);
+
+        Button verinfo = findViewById(R.id.verInfoRest);
+        /*verinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),dataRest.class);
+            }
+        });*/
         call.enqueue(new Callback<ArrayList<structMenu>>() {
             @Override
             public void onResponse(Call<ArrayList<structMenu>> call, Response<ArrayList<structMenu>> response) {

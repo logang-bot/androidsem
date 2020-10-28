@@ -29,7 +29,7 @@
                     android:layout_width="270dp"
                     android:layout_height="40dp"
                     android:fontFamily="@font/alex_brush"
-                    android:text="My menus"
+                    android:text=""
                     android:textAlignment="center"
                     android:textSize="37sp"
                     android:textStyle="bold" />
