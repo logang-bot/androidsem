@@ -46,7 +46,7 @@ public class ResAdapter extends BaseAdapter {
         callRest.setText(listRest.get(i).getCalle());
 
        Glide.with(contextR)
-                .load(RetrofitClient.BASE_URL + listRest.get(i).getFoto())
+                .load(RetrofitClient.BASE_URL + listRest.get(i).getLogo())
                 .centerCrop()
                 .into(imgRest);
         return view;

@@ -46,31 +46,20 @@ public class createMyRest extends AppCompatActivity {
                 TextInputEditText newNitR = root.findViewById(R.id.new_nitR);
                 TextInputEditText newDirR = root.findViewById(R.id.new_dirR);
                 TextInputEditText newTelR = root.findViewById(R.id.new_teR);
-                TextInputEditText newLogR = root.findViewById(R.id.new_logR);
-                TextInputEditText newLatR = root.findViewById(R.id.new_latR);
                 String nombre = newNombreR.getText().toString().trim();
                 String nit = newNitR.getText().toString().trim();
                 String calle = newDirR.getText().toString().trim();
                 String tel = newTelR.getText().toString().trim();
-                String log= newLogR.getText().toString().trim();
-                String lat= newLatR.getText().toString().trim();
-                RequestBody bnombre= RequestBody.create(MediaType.parse("multipart/form-data"),nombre);
-                RequestBody bnit= RequestBody.create(MediaType.parse("multipart/form-data"),nit);
-                RequestBody bcalle= RequestBody.create(MediaType.parse("multipart/form-data"),calle);
-                RequestBody btel= RequestBody.create(MediaType.parse("multipart/form-data"),tel);
-                RequestBody blog= RequestBody.create(MediaType.parse("multipart/form-data"),log);
-                RequestBody blat= RequestBody.create(MediaType.parse("multipart/form-data"),lat);
-
                 Call<structRests> call = RetrofitClient
                         .getInstance()
-                        .getApi().createRest(UserDataServer.TOKEN, bnombre, bnit, bcalle, btel, blog, blat);
+                        .getApi().createRest(UserDataServer.TOKEN, nombre, nit, calle, tel);
                 call.enqueue(new Callback<structRests>() {
                     @Override
                     public void onResponse(Call<structRests> call, Response<structRests> response) {
-
-                        Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                      //  Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         if(response.body().getMessage().equals("El restaurant fue creado correctamente")){
-                            Intent intent = new Intent(root, listMyRests.class);
+                            Intent intent = new Intent(root, logo_createMyRest.class);
+                            intent.putExtra("nombreR", nombre);
                             root.startActivity(intent);
                         }
                     }

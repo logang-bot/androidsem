@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".editMyRestCover"
+    android:background="#0F2B28">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginTop="189dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/amatic_sc"
+        android:text="Current Cover"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imgRestP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ed2imgRestP"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ed2logoRest"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="168dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <Button
+        android:id="@+id/edPickImage"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginStart="143dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginBottom="44dp"
+        android:backgroundTint="#000000"
+        android:fontFamily="@font/aldrich"
+        android:text="Set Cover"
+        android:textColor="#ffffff"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/confirmEdCover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logoRest"
+        app:strokeColor="@color/white" />
+
+    <Button
+        android:id="@+id/confirmEdCover"
+        android:layout_width="wrap_content"
+        android:layout_height="70dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="94dp"
+        android:backgroundTint="#ffffff"
+        android:fontFamily="@font/aldrich"
+        android:text="OK!"
+        app:cornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editRestLocation"
+        app:strokeColor="@color/white" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

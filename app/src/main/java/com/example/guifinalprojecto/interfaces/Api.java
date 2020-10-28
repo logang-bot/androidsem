@@ -82,16 +82,25 @@ public interface Api {
                                 @Field("lat") String latR,
                                 @Query("id") String idRest);
 
+    @Multipart
+    @POST("res/setcover")
+    Call<logInResponse> setcover(@Header("x-access-token") String auth, @Query("id") String idRes, @Part MultipartBody.Part part);
+
+    @Multipart
+    @POST("res/setlogo")
+    Call<logInResponse> setlogo(@Header("x-access-token") String auth, @Query("id") String idRes, @Part MultipartBody.Part part);
+
+    @FormUrlEncoded
     @POST("res/create")
     Call<structRests> createRest(
             @Header("x-access-token") String auth,
-            @Part("nombre") RequestBody nombreR,
-            @Part("nit") RequestBody nitR,
-            @Part("calle") RequestBody dirR,
-            @Part("telefono") RequestBody telR,
-            @Part("log") RequestBody logR,
-            @Part("lat") RequestBody latR
+            @Field("nombre") String nombreR,
+            @Field("nit") String nitR,
+            @Field("calle") String dirR,
+            @Field("telefono") String telR
     );
+    @DELETE("res/delete")
+    Call<structRests> delRest(@Query("id") String idRes);
 
     @GET("menu/search")
     Call<ArrayList<structMenu>> getSearchMenu(@Query("word") String word);
