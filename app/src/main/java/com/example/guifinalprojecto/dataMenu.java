@@ -68,7 +68,8 @@ public class dataMenu extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         contador++;
-                        food_cant_num.setText(contador);
+
+                        food_cant_num.setText(contador+"");
 
                     }
                 });
@@ -77,7 +78,7 @@ public class dataMenu extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         contador--;
-                        food_cant_num.setText(contador);
+                        food_cant_num.setText(contador+"");
                     }
                 });
 

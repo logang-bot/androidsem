@@ -6,4 +6,63 @@
     android:layout_height="match_parent"
     tools:context=".listMyMenus">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#292323">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/aux"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:theme="@style/Theme.GUIfinalProjecto.AppBarOverlay">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarR"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#292323"
+                app:popupTheme="@style/Theme.GUIfinalProjecto.PopupOverlay">
+
+                <TextView
+                    android:id="@+id/title_my_menus"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/alex_brush"
+                    android:text="My menus"
+                    android:textAlignment="center"
+                    android:textSize="37sp"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/newMenu"
+                    android:layout_width="96dp"
+                    android:layout_height="wrap_content"
+                    android:background="@android:drawable/ic_menu_add"
+                    android:backgroundTint="#4B817C"
+                    app:cornerRadius="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:drawableLeft="@android:drawable/ic_menu_add"
+                    android:fontFamily="@font/boogaloo"
+                    android:text="new"
+                    android:textColor="#ffff"
+                    android:textSize="10sp"/>
+
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <GridView
+            android:id="@+id/g_my_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="60dp"
+            android:columnWidth="100dp"
+            android:numColumns="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0" />
+    </RelativeLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

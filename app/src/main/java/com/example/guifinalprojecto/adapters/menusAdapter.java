@@ -46,13 +46,13 @@ public class menusAdapter  extends BaseAdapter {
         TextView precioMenu = (TextView) view.findViewById(R.id.item_precio_menu);
         TextView titleREs= (TextView) view.findViewById(R.id.title_res_onmenu) ;
         nombreMenu.setText(listMenus.get(i).getNombre());
-        precioMenu.setText(listMenus.get(i).getPrecio());
-        //titleREs.setText(listMenus.get(i).getNombre());
+        precioMenu.setText(listMenus.get(i).getPrecio()+" bs");
 
-        /*Glide.with(contextM)
+
+        Glide.with(contextM)
                 .load(RetrofitClient.BASE_URL + listMenus.get(i).getFoto())
                 .centerCrop()
-                .into(imgMenu);*/
+                .into(imgMenu);
         return view;
     }
 }
