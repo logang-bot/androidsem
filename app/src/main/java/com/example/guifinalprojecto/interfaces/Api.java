@@ -90,16 +90,14 @@ public interface Api {
     @POST("res/setlogo")
     Call<logInResponse> setlogo(@Header("x-access-token") String auth, @Query("id") String idRes, @Part MultipartBody.Part part);
 
-
+    @FormUrlEncoded
     @POST("res/create")
     Call<structRests> createRest(
             @Header("x-access-token") String auth,
-            @Part("nombre") RequestBody nombreR,
-            @Part("nit") RequestBody nitR,
-            @Part("calle") RequestBody dirR,
-            @Part("telefono") RequestBody telR,
-            @Part("log") RequestBody logR,
-            @Part("lat") RequestBody latR
+            @Field("nombre") String nombreR,
+            @Field("nit") String nitR,
+            @Field("calle") String dirR,
+            @Field("telefono") String telR
     );
 
     @GET("menu/search")
