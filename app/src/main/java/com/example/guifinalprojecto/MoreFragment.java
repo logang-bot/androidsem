@@ -114,7 +114,7 @@ public class MoreFragment extends Fragment {
                         searchMenuAdapter adapter = new searchMenuAdapter(data, getContext());
                         listM.setAdapter(adapter);
 
-                        /*listR.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        listM.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                             @Override
                             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                                 //animation
@@ -123,11 +123,12 @@ public class MoreFragment extends Fragment {
                                 view.startAnimation(animation1);
                                 //animation
                                 Intent intent = new Intent(getContext(), listMenus.class); //cambiar vista
-                                intent.putExtra("idRest", data.get(i).get_id());
+                                intent.putExtra("idRest", data.get(i).getId_rest());
+                                intent.putExtra("nameRest",data.get(i).getResta());
                                 root.startActivity(intent);
-                                Toast.makeText(getContext(),data.get(i).getNit() , Toast.LENGTH_LONG).show();
+                                //Toast.makeText(getContext(),data.get(i).getNit() , Toast.LENGTH_LONG).show();
                             }
-                        });*/
+                        });
                     }
                     @Override
                     public void onFailure(Call<ArrayList<structMenu>> call, Throwable t) {
