@@ -87,7 +87,6 @@ public class listMyRests extends AppCompatActivity {
         });
         loadComponents();
     }
-
     private void loadComponents(){
         create_Rest = this.findViewById(R.id.newR);
         create_Rest.setOnClickListener(new View.OnClickListener() {
