@@ -33,10 +33,11 @@ public class deleteMyMenu extends AppCompatActivity {
 
         bundle = this.getIntent().getExtras();
         String idMenu = bundle.getString("idM");
-        String nomMenuu = bundle.getString("nomMenu");
+        String nomMenuu = bundle.getString("nombre");
         String idRest=bundle.getString("idRest");
         String nameRest=bundle.getString("nameRest");
         TextView nomMenu =findViewById(R.id.nomMenu);
+
         nomMenu.setText(nomMenuu);
 
         confirmButton = findViewById(R.id.delM);
