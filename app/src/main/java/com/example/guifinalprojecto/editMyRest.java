@@ -119,9 +119,9 @@ public class editMyRest extends AppCompatActivity {
                         Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         if(msg.equals("Fue actualizado correctamente")){
                             Intent intent = new Intent(root, dataMyRest.class);
-                            /*intent.putExtra("idRest", idRest);
+                            intent.putExtra("idRest", idRest);
                             intent.putExtra("fotoRes",foto);
-                            intent.putExtra("logoRes",logo);*/
+                            intent.putExtra("logoRes",logo);
                             root.startActivity(intent);
                         }
                     }

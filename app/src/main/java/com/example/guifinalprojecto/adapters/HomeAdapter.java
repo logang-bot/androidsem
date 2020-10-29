@@ -40,14 +40,22 @@ public class HomeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        View v;
         if(view == null){
-            view = LayoutInflater.from(context).inflate(R.layout.item_res, null);
-            TextView nameRes = view.findViewById(R.id.nameRes);
-            TextView calle = view.findViewById(R.id.calleRes);
-            ImageView imageView= view.findViewById(R.id.imageView);
-            ImageView logoView= view.findViewById(R.id.imgR);
+            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+            v = inflater.inflate(R.layout.item_res, null);
+        }
+        else{
+            v = (View) view;
+        }
+            //view = LayoutInflater.from(context).inflate(R.layout.item_res, null);
+            TextView nameRes = v.findViewById(R.id.nameRes);
+            TextView calle = v.findViewById(R.id.calleRes);
+            ImageView imageView= v.findViewById(R.id.imageView);
+            ImageView logoView= v.findViewById(R.id.imgR);
             nameRes.setText(listdata.get(i).getNombre());
             calle.setText(listdata.get(i).getCalle());
+
             Glide.with(context)
                     .load(RetrofitClient.BASE_URL + listdata.get(i).getFoto())
                     .centerCrop()
@@ -56,7 +64,6 @@ public class HomeAdapter extends BaseAdapter {
                     .load(RetrofitClient.BASE_URL + listdata.get(i).getLogo())
                     .centerCrop()
                     .into(logoView);
-        }
-        return view;
+        return v;
     }
 }
