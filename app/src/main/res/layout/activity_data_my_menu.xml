@@ -38,6 +38,8 @@
                     android:fontFamily="@font/alex_brush"
                     android:textAlignment="center"
                     android:textSize="37sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
                     android:textColor="#ffff"/>
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -51,6 +53,8 @@
                 android:id="@+id/name_Myfood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
                 android:textAlignment="center"
                 android:text="nombre comida"
                 android:textColor="@color/black"
@@ -101,6 +105,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
                 android:fontFamily="sans-serif"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="40dp"
                 android:text="Descripcion asdasdasdsdf"
                 android:textColor="#433B3B"
                 android:textSize="18dp"

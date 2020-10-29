@@ -16,13 +16,16 @@
         <TextView
             android:id="@+id/mostrarnombreRest"
             android:layout_width="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="100dp"
             android:fontFamily="casual"
-            android:textAlignment="viewEnd"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/teal_200"
             android:textSize="36sp"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
