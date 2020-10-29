@@ -87,9 +87,25 @@
             android:text="Siguiente"
             android:textColor="#FFFFFF"
             app:cornerRadius="25dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/new_agregarlogoR"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="106dp" />
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/new_Omitlogo"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="156dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="Omitir"
+            android:textColor="#009688"
+            app:cornerRadius="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_Siglogo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

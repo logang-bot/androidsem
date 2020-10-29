@@ -50,24 +50,27 @@ public class createMyRest extends AppCompatActivity {
                 String nit = newNitR.getText().toString().trim();
                 String calle = newDirR.getText().toString().trim();
                 String tel = newTelR.getText().toString().trim();
-                Call<structRests> call = RetrofitClient
+                Call<logInResponse> call = RetrofitClient
                         .getInstance()
                         .getApi().createRest(UserDataServer.TOKEN, nombre, nit, calle, tel);
-                call.enqueue(new Callback<structRests>() {
+                call.enqueue(new Callback<logInResponse>() {
                     @Override
-                    public void onResponse(Call<structRests> call, Response<structRests> response) {
+                    public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
                       //  Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         if(response.body().getMessage().equals("El restaurant fue creado correctamente")){
                             Intent intent = new Intent(root, logo_createMyRest.class);
                             intent.putExtra("nombreR", nombre);
+                            intent.putExtra("idR", response.body().get_id());
                             root.startActivity(intent);
                         }
+                        Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                     }
                     @Override
-                    public void onFailure(Call<structRests> call, Throwable t) {
+                    public void onFailure(Call<logInResponse> call, Throwable t) {
                         Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
         });
     }
 });
-    }}
+    }
+}

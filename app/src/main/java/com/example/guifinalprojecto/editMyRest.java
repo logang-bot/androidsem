@@ -44,7 +44,7 @@ public class editMyRest extends AppCompatActivity {
     private String mediaPath, postPath;
 
     private EditText ed_nombreR, ed_nitR, ed_dirR,ed_telR,ed_latR, ed_logR;
-    private Button confirmEdit, btnEdit_FotoR;
+    private Button confirmEdit, btnEdit_FotoR, btnEditRLocation;
     private FloatingActionButton btnEdit_LogoR;
     private CircleImageView logoRest;
     private ImageView fotoRest;
@@ -59,13 +59,14 @@ public class editMyRest extends AppCompatActivity {
         ed_nombreR = findViewById(R.id.ed_nombreR);
         ed_nitR = findViewById(R.id.ed_nitR);
         ed_dirR = findViewById(R.id.ed_dirR);
-        ed_latR = findViewById(R.id.ed_latR);
-        ed_logR = findViewById(R.id.ed_logR);
+        //ed_latR = findViewById(R.id.ed_latR);
+        //ed_logR = findViewById(R.id.ed_logR);
         ed_telR = findViewById(R.id.ed_telR);
         confirmEdit= findViewById(R.id.editRest);
 
         btnEdit_FotoR = findViewById(R.id.editRestCover);
         btnEdit_LogoR = findViewById(R.id.buttonEdit_logoR);
+        btnEditRLocation = findViewById(R.id.editRestLocation);
 
         //fotoRest= findViewById(R.id.ed_fotoR);
         logoRest= findViewById(R.id.ed_logoR);
@@ -86,8 +87,8 @@ public class editMyRest extends AppCompatActivity {
         ed_nitR.setText(nit);
         ed_dirR.setText(dir);
         ed_telR.setText(tel);
-        ed_logR.setText(log);
-        ed_latR.setText(lat);
+        //ed_logR.setText(log);
+        //ed_latR.setText(lat);
         /*Glide.with(getApplicationContext())
                 .load(RetrofitClient.BASE_URL + foto)
                 .centerCrop()
@@ -104,8 +105,8 @@ public class editMyRest extends AppCompatActivity {
                 String nit = ed_nitR.getText().toString().trim();
                 String dir = ed_dirR.getText().toString().trim();
                 String tel =ed_telR.getText().toString().trim();
-                String log = ed_logR.getText().toString().trim();
-                String lat = ed_latR.getText().toString().trim();
+                //String log = ed_logR.getText().toString().trim();
+                //String lat = ed_latR.getText().toString().trim();
 
                 Call<structRests> call = RetrofitClient
                         .getInstance()
@@ -129,6 +130,19 @@ public class editMyRest extends AppCompatActivity {
                         Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
+            }
+        });
+
+        btnEditRLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(root, editMyRestLocation.class);
+                intent.putExtra("idR", idR);
+                intent.putExtra("fotoRes", foto);
+                intent.putExtra("logoRes",logo);
+                intent.putExtra("log", log);
+                intent.putExtra("lat",lat);
+                root.startActivity(intent);
             }
         });
 

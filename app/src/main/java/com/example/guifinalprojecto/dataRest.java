@@ -49,7 +49,7 @@ public class dataRest extends AppCompatActivity {
                 TextView latRest=findViewById(R.id.latRest);
                 TextView fechRest=findViewById(R.id.fechaRest);
                 TitleRest.setText(data.getNombre());
-                NomPropietario.setText(data.getNombrePropietario());
+                //NomPropietario.setText(data.getNombrePropietario());
                 nitRest.setText(data.getNit());
                 dirRest.setText(data.getCalle());
                 telRest.setText(data.getTelefono());

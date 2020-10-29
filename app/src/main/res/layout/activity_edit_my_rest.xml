@@ -70,8 +70,8 @@
                 android:id="@+id/textInputLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginBottom="0dp"
                 android:textColorHint="#ffffff"
                 android:theme="@style/myEditTextStyle"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout2"
@@ -94,7 +94,7 @@
                 android:id="@+id/textInputLayout2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="0dp"
                 android:textColorHint="#ffffff"
                 android:theme="@style/myEditTextStyle"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
@@ -118,7 +118,7 @@
                 android:id="@+id/textInputLayout3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="0dp"
                 android:textColorHint="#ffffff"
                 android:theme="@style/myEditTextStyle"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
@@ -142,7 +142,7 @@
                 android:id="@+id/textInputLayout4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="0dp"
                 android:textColorHint="#ffffff"
                 android:theme="@style/myEditTextStyle"
                 app:layout_constraintBottom_toTopOf="@+id/textInputLayout5"
@@ -162,112 +162,55 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColorHint="#ffffff"
-                android:theme="@style/myEditTextStyle"
-                app:layout_constraintBottom_toTopOf="@+id/textInputLayout6"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_logR"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@android:color/transparent"
-                    android:hint="Log"
-                    android:inputType="text"
-                    android:textColor="#ffffff"
-                    android:textColorHint="@color/white"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="527dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:textColorHint="#ffffff"
-                android:theme="@style/myEditTextStyle"
-                app:layout_constraintBottom_toTopOf="@+id/editRestLocation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/ed_latR"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@android:color/transparent"
-                    android:hint="Lat"
-                    android:inputType="text"
-                    android:textColor="#ffffff"
-                    android:textColorHint="@color/white"
-                    tools:layout_editor_absoluteX="0dp"
-                    tools:layout_editor_absoluteY="527dp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
             <Button
                 android:id="@+id/editRestLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="25dp"
-                android:layout_marginBottom="18dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="32dp"
                 android:backgroundTint="#000000"
                 android:fontFamily="@font/aldrich"
                 android:text="Edit Location"
                 android:textColor="#ffffff"
                 app:cornerRadius="25dp"
-                app:layout_constraintBottom_toTopOf="@+id/editRest"
                 app:layout_constraintEnd_toStartOf="@+id/editRestCover"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
                 app:strokeColor="@color/white" />
 
             <Button
                 android:id="@+id/editRestCover"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_marginStart="25dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginBottom="18dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
                 android:backgroundTint="#000000"
                 android:fontFamily="@font/aldrich"
                 android:text="Edit Cover"
                 android:textColor="#ffffff"
                 app:cornerRadius="25dp"
-                app:layout_constraintBottom_toTopOf="@+id/editRest"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/editRestLocation"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout6"
-                app:layout_constraintVertical_bias="0.25"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
                 app:strokeColor="@color/white" />
 
             <Button
                 android:id="@+id/editRest"
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
-                android:layout_marginTop="18dp"
-                android:layout_marginBottom="70dp"
+                android:layout_marginStart="161dp"
+                android:layout_marginTop="46dp"
+                android:layout_marginEnd="162dp"
+                android:layout_marginBottom="88dp"
                 android:backgroundTint="#ffffff"
                 android:fontFamily="@font/aldrich"
                 android:text="OK!"
                 app:cornerRadius="25dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editRestLocation"
-                app:strokeColor="@color/white"
-                tools:ignore="MissingConstraints" />
+                app:strokeColor="@color/white" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,14 +8,13 @@ public class structRests {
     private String nombre;
     private String nit;
     private String propietario;
-    private String nombrePropietario;
     private String calle;
     private String telefono;
     private String log;
     private String lat;
     private String message;
 
-    public structRests(String logo, String foto, String _id, String fechaReg, String nombre, String nit, String propietario, String nombrePropietario, String calle, String telefono, String log, String lat) {
+    public structRests(String logo, String foto, String _id, String fechaReg, String nombre, String nit, String propietario, String calle, String telefono, String log, String lat, String message) {
         this.logo = logo;
         this.foto = foto;
         this._id = _id;
@@ -23,7 +22,6 @@ public class structRests {
         this.nombre = nombre;
         this.nit = nit;
         this.propietario = propietario;
-        this.nombrePropietario= nombrePropietario;
         this.calle = calle;
         this.telefono = telefono;
         this.log = log;
@@ -85,14 +83,6 @@ public class structRests {
 
     public void setPropietario(String propietario) {
         this.propietario = propietario;
-    }
-
-    public String getNombrePropietario() {
-        return nombrePropietario;
-    }
-
-    public void setNombrePropietario(String nombrePropietario) {
-        this.nombrePropietario = nombrePropietario;
     }
 
     public String getCalle() {

@@ -1,11 +1,20 @@
 package com.example.guifinalprojecto.models;
 
 public class logInResponse {
-    private String message, token;
+    private String message, token, _id;
 
-    public logInResponse(String message, String token) {
+    public logInResponse(String message, String token, String _id) {
         this.message = message;
         this.token = token;
+        this._id = _id;
+    }
+
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
     }
 
     public String getMessage() {
