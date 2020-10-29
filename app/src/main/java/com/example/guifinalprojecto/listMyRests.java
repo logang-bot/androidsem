@@ -102,6 +102,5 @@ public class listMyRests extends AppCompatActivity {
         Intent intent = new Intent(root, MainDashboard.class);
         root.startActivity(intent);
     }
-
 }
 

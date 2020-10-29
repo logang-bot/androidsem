@@ -12,6 +12,7 @@ public class structMenu {
     private String id_rest;
     private String resta;
     private String imgresta;
+    private String message;
 
     public structMenu(String foto, String contador, String _id, String nombre, String precio, String descripcion, String cantidad_por_dia, String fechareg, String id_rest, String resta, String imgresta) {
         this.foto = foto;
@@ -25,6 +26,7 @@ public class structMenu {
         this.id_rest = id_rest;
         this.resta = resta;
         this.imgresta = imgresta;
+        this.message = message;
     }
 
     public String getFoto() {
@@ -113,5 +115,13 @@ public class structMenu {
 
     public void setImgresta(String imgresta) {
         this.imgresta = imgresta;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

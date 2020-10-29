@@ -225,7 +225,7 @@
                 android:layout_marginBottom="40dp"
                 android:backgroundTint="#051E2B"
                 android:fontFamily="@font/boogaloo"
-                android:text="MENUS"
+                android:text="PRODUCTOS"
                 android:textColor="#ffff"
                 android:textSize="17sp"
                 app:cornerRadius="45dp"

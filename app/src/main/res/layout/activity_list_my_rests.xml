@@ -21,15 +21,12 @@
                 android:layout_height="match_parent"
                 android:background="#292323"
                 app:popupTheme="@style/Theme.GUIfinalProjecto.PopupOverlay" >
-
                 <TextView
                     android:layout_width="270dp"
                     android:layout_height="40dp"
                     android:fontFamily="@font/alex_brush"
                     android:text="My Restaurants"
-
                     android:textSize="37sp" />
-
                 <Button
                     android:id="@+id/newR"
                     android:layout_width="96dp"
@@ -45,7 +42,6 @@
                     android:textSize="10sp"/>
             </androidx.appcompat.widget.Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
-
         <ListView
             android:id="@+id/myrest"
             android:layout_width="match_parent"
@@ -55,6 +51,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             />
-
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

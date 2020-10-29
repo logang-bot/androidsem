@@ -117,5 +117,15 @@ public interface Api {
     @GET("menu/data")
     Call<structMenu> getDataMenu(@Query("idMenu") String idMenu);
 
+    @FormUrlEncoded
+    @POST("menu/create")
+    Call<structMenu> createMenu(
+            @Query("idRes") String idRes,
+            @Field("nombre") String nombre,
+            @Field("precio") String precio,
+            @Field("descripcion") String descripcion,
+            @Field("cantidad_por_dia") String cantidad_por_dia
+    );
+
 
 }

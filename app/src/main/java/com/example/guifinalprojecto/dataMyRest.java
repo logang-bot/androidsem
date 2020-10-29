@@ -120,6 +120,7 @@ public class dataMyRest extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(root, listMyMenus.class);
                 intent.putExtra("idRest", idRest);
+                intent.putExtra("nameRest",Nombre);
                 root.startActivity(intent);
             }
         });

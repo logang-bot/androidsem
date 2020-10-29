@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".dataMenu">
+    tools:context=".dataMyMenu">
+
 
     <RelativeLayout
         android:background="#292323"
@@ -30,7 +31,7 @@
                 >
 
                 <TextView
-                    android:id="@+id/title_res_onmenuData"
+                    android:id="@+id/title_res_onMyMenu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="."
@@ -47,7 +48,7 @@
             android:layout_marginTop="80dp">
 
             <TextView
-                android:id="@+id/name_food"
+                android:id="@+id/name_Myfood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
@@ -55,11 +56,11 @@
                 android:textColor="@color/black"
                 android:textSize="33dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@id/title_res_onmenuData"
+                app:layout_constraintBottom_toTopOf="@id/title_res_onMyMenu"
                 tools:ignore="NotSibling" />
 
             <TextView
-                android:id="@+id/precio_food"
+                android:id="@+id/precio_Myfood"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -68,8 +69,7 @@
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name_food" />
-
+                app:layout_constraintTop_toBottomOf="@+id/name_Myfood" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,14 +77,14 @@
                 android:text=" bs"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/precio_food"
-                app:layout_constraintTop_toBottomOf="@+id/name_food" />
+                app:layout_constraintStart_toEndOf="@+id/precio_Myfood"
+                app:layout_constraintTop_toBottomOf="@+id/name_Myfood" />
 
             <ImageView
 
-                android:id="@+id/image_food"
-                android:layout_width="220dp"
-                android:layout_height="220dp"
+                android:id="@+id/image_Myfood"
+                android:layout_width="280dp"
+                android:layout_height="280dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="120dp"
@@ -96,7 +96,7 @@
             </ImageView>
 
             <TextView
-                android:id="@+id/food_desc"
+                android:id="@+id/food_Mydesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="36dp"
@@ -106,108 +106,36 @@
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_food"
+                app:layout_constraintTop_toBottomOf="@+id/image_Myfood"
                 tools:ignore="MissingConstraints" />
-
-
-            <TextView
-                android:id="@+id/food_cant"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="28dp"
-                android:fontFamily="@font/boogaloo"
-                android:padding="20dp"
-                android:text="Cantidad:"
-                android:textColor="#433B3B"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/food_desc" />
-
-            <TextView
-                android:id="@+id/food_cant_num"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="30dp"
-                android:fontFamily="@font/boogaloo"
-                android:padding="20dp"
-                android:textColor="#433B3B"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@id/food_cant"
-                app:layout_constraintTop_toBottomOf="@+id/food_desc"
-                tools:ignore="MissingConstraints" />
-
-
-            <Button
-                android:id="@+id/plus_food"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="35dp"
-                android:backgroundTint="#273937"
-                android:text="+"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="23dp"
-                android:textStyle="bold"
-                app:cornerRadius="50dp"
-                app:layout_constraintEnd_toStartOf="@+id/dism_food"
-                app:layout_constraintStart_toEndOf="@+id/food_cant_num"
-                app:layout_constraintTop_toBottomOf="@+id/food_desc" />
-
-            <Button
-                android:id="@+id/dism_food"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginTop="35dp"
-                android:layout_marginEnd="30dp"
-                android:backgroundTint="#273937"
-                android:text="-"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-
-                android:textSize="23dp"
-                android:textStyle="bold"
-                app:cornerRadius="50dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/food_desc" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/añadir_pedido"
+                android:id="@+id/editMenu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="240dp"
-                android:layout_marginTop="130dp"
-                android:layout_marginEnd="40dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginEnd="25dp"
+                android:layout_marginBottom="40dp"
                 android:backgroundTint="#ffffff"
-                android:src="@drawable/add_shopping_cart"
-                app:layout_constraintBottom_toTopOf="@+id/textView10"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                >
-
-            </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginEnd="20dp"
-                android:layout_marginBottom="20dp"
-                android:text="Añadir al carrito"
-                android:textColor="#ffffff"
+                android:src="@drawable/ic_baseline_edit_24"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/elimMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginBottom="40dp"
+                android:backgroundTint="#ffff"
+                android:src="@drawable/ic_baseline_delete_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

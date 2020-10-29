@@ -8,7 +8,9 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.guifinalprojecto.adapters.ResAdapter;
@@ -17,6 +19,8 @@ import com.example.guifinalprojecto.adapters.structMenu;
 import com.example.guifinalprojecto.adapters.structRests;
 import com.example.guifinalprojecto.interfaces.RetrofitClient;
 import com.example.guifinalprojecto.utils.UserDataServer;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -38,10 +42,25 @@ public class listMenus extends AppCompatActivity {
         String idRest = bundle.getString("idRest");
         Toast.makeText(this," idRest = "+idRest.toString(), Toast.LENGTH_LONG).show();
 
+        String nameRest = bundle.getString("nameRest");
+
+
         Call<ArrayList<structMenu>> call = RetrofitClient
                 .getInstance()
                 .getApi().getMenu(idRest);
 
+        TextView titleREst = findViewById(R.id.title_res_onmenu);
+        titleREst.setText(nameRest);
+
+        Button verinfo = findViewById(R.id.verInfoRest);
+        verinfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getApplicationContext(),dataRest.class);
+                intent.putExtra("idRest",idRest);
+                root.startActivity(intent);
+            }
+        });
         call.enqueue(new Callback<ArrayList<structMenu>>() {
             @Override
             public void onResponse(Call<ArrayList<structMenu>> call, Response<ArrayList<structMenu>> response) {
@@ -61,6 +80,8 @@ public class listMenus extends AppCompatActivity {
                         //animation
                         Intent intent = new Intent(getApplicationContext(), dataMenu.class); //cambiar vista
                         intent.putExtra("idMenu", data.get(i).get_id());
+                        intent.putExtra("nameRest",nameRest);
+                        //intent.putExtra("name_Rest",
                         root.startActivity(intent);
                         Toast.makeText(getApplicationContext(),data.get(i).getNombre() , Toast.LENGTH_LONG).show();
                     }
