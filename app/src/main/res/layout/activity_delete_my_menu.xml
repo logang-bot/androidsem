@@ -9,12 +9,12 @@
 
     <ImageView
         android:id="@+id/imageborrarM"
-        android:layout_width="290dp"
-        android:layout_height="200dp"
+        android:layout_width="310dp"
+        android:layout_height="310dp"
         android:layout_marginStart="76dp"
         android:layout_marginTop="270dp"
         android:layout_marginEnd="76dp"
-        android:src="@drawable/alert"
+        android:src="@drawable/warning"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,11 +25,11 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/acme"
-        android:text="¿Está seguro que desea elimianr este producto?"
+        android:text="Eliminar producto"
         android:textAlignment="center"
         android:textColor="#121111"
         android:textSize="23sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/nomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -41,6 +41,8 @@
         android:fontFamily="casual"
         android:textAlignment="center"
         android:textColor="#ffffff"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
         android:textSize="23sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toTopOf="@+id/imageborrarM"
