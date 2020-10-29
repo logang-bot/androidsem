@@ -5,11 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".createMyMenu"
-    android:background="">
+    >
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backgroundnewmenu">
+        android:background="@drawable/backgroundnewmenu"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-157dp">
 
         <TextView
             android:id="@+id/textView"
@@ -17,21 +20,23 @@
             android:layout_height="wrap_content"
             android:fontFamily="casual"
             android:text="Nuevo Producto"
-            android:textAlignment="viewEnd"
-            android:textStyle="bold"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/teal_200"
             android:textSize="45sp"
+            android:textStyle="bold"
+            android:layout_marginTop="90dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="62dp"
+
+            app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
 
         <Button
             android:id="@+id/new_Sig"
             android:layout_width="178dp"
             android:layout_height="59dp"
+            android:layout_marginBottom="50dp"
             android:backgroundTint="#009688"
             android:text="Siquiente"
             android:textColor="#FFFFFF"
@@ -39,7 +44,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginBottom="50dp"
             tools:ignore="MissingConstraints" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -47,7 +51,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="110dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
             android:textColorHint="#ffffff"

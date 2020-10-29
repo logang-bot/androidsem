@@ -48,6 +48,9 @@ public class listMyMenus extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), createMyMenu.class);
+                intent.putExtra("idRes",idRest);
+                intent.putExtra("nameRest",nameRest);
+                root.startActivity(intent);
             }
         });
 
@@ -83,4 +86,12 @@ public class listMyMenus extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(root, dataMyRest.class);
+        intent.putExtra("idRest",idRest);
+        root.startActivity(intent);
+    }
+
 }

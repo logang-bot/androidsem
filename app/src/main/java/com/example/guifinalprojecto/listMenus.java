@@ -53,12 +53,14 @@ public class listMenus extends AppCompatActivity {
         titleREst.setText(nameRest);
 
         Button verinfo = findViewById(R.id.verInfoRest);
-        /*verinfo.setOnClickListener(new View.OnClickListener() {
+        verinfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(getApplicationContext(),dataRest.class);
+                intent.putExtra("idRest",idRest);
+                root.startActivity(intent);
             }
-        });*/
+        });
         call.enqueue(new Callback<ArrayList<structMenu>>() {
             @Override
             public void onResponse(Call<ArrayList<structMenu>> call, Response<ArrayList<structMenu>> response) {

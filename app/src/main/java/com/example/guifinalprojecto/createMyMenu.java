@@ -21,9 +21,18 @@ import retrofit2.Response;
 public class createMyMenu extends AppCompatActivity {
     private Button siguiente ;
     private createMyMenu root=this;
+    private  Bundle bundle;
+    private String idRes , nameRest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        bundle = this.getIntent().getExtras();
+        idRes = bundle.getString("idRes");
+        nameRest = bundle.getString("nameRest");
+
+        Toast.makeText(this," idRest = "+idRes.toString(), Toast.LENGTH_LONG).show();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activitycreatemymenu);
         loadComponents();
@@ -33,6 +42,8 @@ public class createMyMenu extends AppCompatActivity {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
                 TextInputEditText newNombreM = root.findViewById(R.id.new_nombreM);
                 TextInputEditText new_precio = root.findViewById(R.id.new_precio);
                 TextInputEditText new_desc = root.findViewById(R.id.new_desc);
@@ -43,7 +54,7 @@ public class createMyMenu extends AppCompatActivity {
                 String cant = new_cant.getText().toString().trim();
                 Call<structMenu> call = RetrofitClient
                         .getInstance()
-                        .getApi().createMenu(nombre, precio, desc, cant);
+                        .getApi().createMenu(idRes,nombre, precio, desc, cant);
                 call.enqueue(new Callback<structMenu>() {
                     @Override
                     public void onResponse(Call<structMenu> call, Response<structMenu> response) {
@@ -51,6 +62,8 @@ public class createMyMenu extends AppCompatActivity {
                         if (response.body().getMessage().equals("menu creado satisfactoriamente")) {
                             Intent intent = new Intent(root, image_createMyMenu.class);
                             intent.putExtra("nombre", nombre);
+                            intent.putExtra("idRes",idRes);
+                            intent.putExtra("nameRest",nameRest);
                             root.startActivity(intent);
                         }
                     }

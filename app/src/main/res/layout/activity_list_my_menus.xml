@@ -27,7 +27,7 @@
                 <TextView
                     android:id="@+id/title_my_menus"
                     android:layout_width="270dp"
-                    android:layout_height="40dp"
+                    android:layout_height="50dp"
                     android:fontFamily="@font/alex_brush"
                     android:text=""
                     android:textAlignment="center"

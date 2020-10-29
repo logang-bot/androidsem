@@ -114,7 +114,7 @@ public interface Api {
     @FormUrlEncoded
     @POST("menu/create")
     Call<structMenu> createMenu(
-
+            @Query("idRes") String idRes,
             @Field("nombre") String nombre,
             @Field("precio") String precio,
             @Field("descripcion") String descripcion,
