@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".editMyRestCover"
-    android:background="#0F2B28">
+    android:background="@drawable/backeditres">
 
     <TextView
         android:id="@+id/textView12"
@@ -19,6 +19,7 @@
         android:text="Current Cover"
         android:textColor="#ffffff"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imgRestP"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
