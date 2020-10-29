@@ -3,6 +3,7 @@ package com.example.guifinalprojecto;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.ProgressDialog;
 import android.app.VoiceInteractor;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ConstraintLayout constraintLayout;
     TextView tvTimeMsg;
     Button loginButton, signupButton;
-
+    ProgressDialog progressDialog;
 
     private MainActivity root = this;
     @Override
@@ -94,7 +95,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view){
                 //Intent intent = new Intent(root, MainDashboard.class);
                 //root.startActivity(intent);
-                //login
+                progressDialog = new ProgressDialog(root);
+
                 TextInputEditText et_email = root.findViewById(R.id.et_email);
                 TextInputEditText et_password = root.findViewById(R.id.et_password);
 
@@ -113,6 +115,11 @@ public class MainActivity extends AppCompatActivity {
                             if(response.body().getToken()!=null){
                                 UserDataServer.MSN = response.body().getMessage();
                                 UserDataServer.TOKEN = response.body().getToken();
+
+                                progressDialog.show();
+                                progressDialog.setContentView(R.layout.progress_dialog);
+                                progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
                                 Toast.makeText(root, "Sugoi!", Toast.LENGTH_LONG).show();
                                 Intent intent = new Intent(root, MainDashboard.class);
                                 root.startActivity(intent);
@@ -123,52 +130,11 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     }
-
                     @Override
                     public void onFailure(Call<logInResponse> call, Throwable t) {
                         Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
-                //login
-                //call to api
-                /*AsyncHttpClient client = new AsyncHttpClient();
-
-                TextInputEditText email = root.findViewById(R.id.et_email);
-                TextInputEditText password = root.findViewById(R.id.et_password);
-
-
-                RequestParams params = new RequestParams();
-                params.add("email", email.toString());
-                params.add("password", password.toString());
-
-                client.post(EndPoints.LOGIN_SERVICE, params, new JsonHttpResponseHandler(){
-                    @Override
-                    public void onSuccess(int statusCode, Header[] headers, JSONObject response){
-                        try {
-                            if(response.has("message")){
-                                UserDataServer.MSN = response.getString("message");
-                            }
-                            if(response.has("token")){
-                                UserDataServer.TOKEN = response.getString("token");
-                            }
-                            if(UserDataServer.TOKEN.length()>150){
-                                Intent intent = new Intent(root, MainDashboard.class);
-                                root.startActivity(intent);
-                            }
-                            else{
-                                Toast.makeText(root, response.getString("message"), Toast.LENGTH_LONG).show();
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                });
-
-                /*Intent intent = new Intent(root, MainDashboard.class);
-                intent.putExtra("backupAgentName", root.getApplicationInfo().backupAgentName);
-                intent.putExtra("data", "soy la informacion de la actividad MainActivity");
-                intent.putExtra("number", 26);
-                root.startActivity(intent);*/
             }
         }));
     }

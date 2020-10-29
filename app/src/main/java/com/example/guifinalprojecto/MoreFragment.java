@@ -1,5 +1,6 @@
 package com.example.guifinalprojecto;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -41,6 +42,7 @@ public class MoreFragment extends Fragment {
 
     private MoreFragment root = this;
 
+    ProgressDialog progressDialog;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -105,11 +107,18 @@ public class MoreFragment extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                progressDialog = new ProgressDialog(getContext());
+
                 TextInputEditText searchText = root.getActivity().findViewById(R.id.searchMsearchfield);
                 String searchword = searchText.getText().toString().trim();
                 Call<ArrayList<structMenu>> call = RetrofitClient
                         .getInstance()
                         .getApi().getSearchMenu(searchword);
+
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.progress_dialog);
+                progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
                 call.enqueue(new Callback<ArrayList<structMenu>>() {
                     @Override
@@ -124,6 +133,8 @@ public class MoreFragment extends Fragment {
                             imgstatm.setImageResource(0);
                             txtstatm.setText("");
                         }
+
+                        progressDialog.hide();
                         searchMenuAdapter adapter = new searchMenuAdapter(data, getContext());
                         listM.setAdapter(adapter);
 
@@ -135,9 +146,9 @@ public class MoreFragment extends Fragment {
                                 animation1.setDuration(4000);
                                 view.startAnimation(animation1);
                                 //animation
-                                Intent intent = new Intent(getContext(), listMenus.class); //cambiar vista
+                                Intent intent = new Intent(getContext(), dataMenu.class); //cambiar vista
                                 intent.putExtra("idRest", data.get(i).getId_rest());
-                                intent.putExtra("nameRest",data.get(i).getResta());
+                                intent.putExtra("idMenu", data.get(i).get_id());
                                 root.startActivity(intent);
                                 //Toast.makeText(getContext(),data.get(i).getNit() , Toast.LENGTH_LONG).show();
                             }

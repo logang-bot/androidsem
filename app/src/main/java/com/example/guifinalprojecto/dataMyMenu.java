@@ -22,7 +22,7 @@ import retrofit2.Response;
 public class dataMyMenu extends AppCompatActivity {
     private dataMyMenu root=this;
     private Bundle bundle;
-    private String nombre, precio, descripcion,cantidad_dia,idM,nameRest,idRest, idMenu;
+    private String nombre, precio, descripcion,cantidad_dia,idM,nameRest,idRest, idMenu, fotoM;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +51,7 @@ public class dataMyMenu extends AppCompatActivity {
                 precio = data.getPrecio();
                 descripcion = data.getDescripcion();
                 cantidad_dia = data.getCantidad_por_dia();
+                fotoM = data.getFoto();
                 ImageView image_Myfood= findViewById(R.id.image_Myfood);
                 TextView precio_Myfood= findViewById(R.id.precio_Myfood);
                 TextView food_Mydesc=findViewById(R.id.food_Mydesc);
@@ -63,7 +64,6 @@ public class dataMyMenu extends AppCompatActivity {
 
                 FloatingActionButton delete_menu = findViewById(R.id.elimMenu);
                 FloatingActionButton edit_menu = findViewById(R.id.editMenu);
-
 
                 Glide.with(getApplicationContext())
                         .load(RetrofitClient.BASE_URL + data.getFoto())
@@ -90,6 +90,7 @@ public class dataMyMenu extends AppCompatActivity {
                 intent.putExtra("precio", precio);
                 intent.putExtra("descripcion", descripcion);
                 intent.putExtra("cantidad", cantidad_dia);
+                intent.putExtra("fotoM", fotoM);
                 root.startActivity(intent);
             }
         });
