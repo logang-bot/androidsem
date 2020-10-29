@@ -2,6 +2,7 @@ package com.example.guifinalprojecto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,8 @@ public class editUser extends AppCompatActivity {
     private Button btnEdit;
 
     private editUser root = this;
+
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,9 @@ public class editUser extends AppCompatActivity {
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                progressDialog = new ProgressDialog(root);
+
                 String name= edname.getText().toString().trim();
                 String email = edemail.getText().toString().trim();
                 String password = edpass.getText().toString().trim();
@@ -62,6 +68,11 @@ public class editUser extends AppCompatActivity {
                         String msg = response.body().getMessage();
                         Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         if(msg.equals("sugoi")){
+
+                            progressDialog.show();
+                            progressDialog.setContentView(R.layout.progress_dialog);
+                            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
                             Intent intent = new Intent(root, displayProfile.class);
                             root.startActivity(intent);
                         }

@@ -5,6 +5,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -49,6 +50,8 @@ public class editMyRest extends AppCompatActivity {
     private CircleImageView logoRest;
     private ImageView fotoRest;
     private String idR;
+
+    ProgressDialog progressDialog;
 
     private editMyRest root= this;
     @Override
@@ -101,6 +104,9 @@ public class editMyRest extends AppCompatActivity {
         confirmEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                progressDialog = new ProgressDialog(root);
+
                 String nombre= ed_nombreR.getText().toString().trim();
                 String nit = ed_nitR.getText().toString().trim();
                 String dir = ed_dirR.getText().toString().trim();
@@ -118,6 +124,11 @@ public class editMyRest extends AppCompatActivity {
                         String msg = response.body().getMessage();
                         Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         if(msg.equals("Fue actualizado correctamente")){
+
+                            progressDialog.show();
+                            progressDialog.setContentView(R.layout.progress_dialog);
+                            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
                             Intent intent = new Intent(root, dataMyRest.class);
                             intent.putExtra("idRest", idRest);
                             intent.putExtra("fotoRes",foto);

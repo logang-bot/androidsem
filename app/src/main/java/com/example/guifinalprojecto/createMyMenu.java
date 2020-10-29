@@ -2,6 +2,7 @@ package com.example.guifinalprojecto;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,8 @@ public class createMyMenu extends AppCompatActivity {
     private  Bundle bundle;
     private String idRes , nameRest;
 
+    ProgressDialog progressDialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,6 +46,7 @@ public class createMyMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                progressDialog = new ProgressDialog(root);
 
                 TextInputEditText newNombreM = root.findViewById(R.id.new_nombreM);
                 TextInputEditText new_precio = root.findViewById(R.id.new_precio);
@@ -60,6 +64,11 @@ public class createMyMenu extends AppCompatActivity {
                     public void onResponse(Call<structMenu> call, Response<structMenu> response) {
                         //  Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         if (response.body().getMessage().equals("menu creado satisfactoriamente")) {
+
+                            progressDialog.show();
+                            progressDialog.setContentView(R.layout.progress_dialog);
+                            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
                             Intent intent = new Intent(root, image_createMyMenu.class);
                             intent.putExtra("nombre", nombre);
                             intent.putExtra("idRes",idRes);

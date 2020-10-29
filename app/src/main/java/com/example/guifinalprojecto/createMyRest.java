@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -31,6 +32,8 @@ import retrofit2.Response;
 public class createMyRest extends AppCompatActivity {
     private Button siguiente ;
     private createMyRest root=this;
+
+    ProgressDialog progressDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +45,9 @@ public class createMyRest extends AppCompatActivity {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                progressDialog = new ProgressDialog(root);
+
                 TextInputEditText newNombreR = root.findViewById(R.id.new_nombreR);
                 TextInputEditText newNitR = root.findViewById(R.id.new_nitR);
                 TextInputEditText newDirR = root.findViewById(R.id.new_dirR);
@@ -58,6 +64,11 @@ public class createMyRest extends AppCompatActivity {
                     public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
                       //  Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                         if(response.body().getMessage().equals("El restaurant fue creado correctamente")){
+
+                            progressDialog.show();
+                            progressDialog.setContentView(R.layout.progress_dialog);
+                            progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
                             Intent intent = new Intent(root, logo_createMyRest.class);
                             intent.putExtra("nombreR", nombre);
                             intent.putExtra("idR", response.body().get_id());

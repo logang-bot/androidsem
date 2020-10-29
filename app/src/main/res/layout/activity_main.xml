@@ -47,7 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="180dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:textColorHint="#ffffff"
@@ -89,6 +89,7 @@
             android:backgroundTint="@android:color/transparent"
             android:drawableRight="@drawable/ic_lock_white_24"
             android:hint="Password"
+            android:inputType="textPassword"
             android:textColor="#ffffff" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -109,26 +110,12 @@
         app:strokeColor="@color/white" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginTop="23dp"
-        android:layout_marginEnd="124dp"
-        android:text="¿Olvidaste tu contraseña?"
-        android:textColor="#ffffff"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_signIn" />
-
-    <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="117dp"
-        android:layout_marginTop="184dp"
-        android:layout_marginEnd="118dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="100dp"
         android:text="¿No tienes una cuenta aun?"
         android:textAlignment="center"
         android:textColor="#ffffff"
@@ -136,7 +123,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_signIn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

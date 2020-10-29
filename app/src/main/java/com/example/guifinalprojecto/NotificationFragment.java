@@ -1,5 +1,6 @@
 package com.example.guifinalprojecto;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -39,6 +40,8 @@ import retrofit2.Response;
 public class NotificationFragment extends Fragment {
 
     private NotificationFragment root = this;
+
+    ProgressDialog progressDialog;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -109,11 +112,18 @@ public class NotificationFragment extends Fragment {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                progressDialog = new ProgressDialog(getContext());
+
                 TextInputEditText searchText = root.getActivity().findViewById(R.id.searchfield);
                 String searchword = searchText.getText().toString().trim();
                 Call<ArrayList<structRests>> call = RetrofitClient
                         .getInstance()
                         .getApi().getSearchRest(searchword);
+
+                progressDialog.show();
+                progressDialog.setContentView(R.layout.progress_dialog);
+                progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
                 call.enqueue(new Callback<ArrayList<structRests>>() {
                     @Override
@@ -128,6 +138,8 @@ public class NotificationFragment extends Fragment {
                             imgstat.setImageResource(0);
                             txtstat.setText("");
                         }
+                        progressDialog.hide();
+
                         ResAdapter adapter = new ResAdapter(data, getContext());
                         listR.setAdapter(adapter);
 

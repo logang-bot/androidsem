@@ -14,7 +14,7 @@
         <androidx.appcompat.widget.AppCompatImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/backdatamenu"
+            android:src="@drawable/goru3"
             android:scaleType="centerCrop"
             />
         <com.google.android.material.appbar.AppBarLayout
@@ -52,37 +52,28 @@
                 android:id="@+id/name_food"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAlignment="center"
+                android:fontFamily="@font/aldrich"
                 android:text="nombre comida"
-                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
                 android:textSize="33dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:textStyle="bold"
+                android:textStyle="italic"
                 app:layout_constraintBottom_toTopOf="@id/title_res_onmenuData"
-                tools:ignore="NotSibling" />
+                tools:ignore="NotSibling"
+                tools:layout_editor_absoluteX="20dp" />
 
             <TextView
                 android:id="@+id/precio_food"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:fontFamily="@font/gotham"
                 android:text="30"
-                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:textColor="#ffffff"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/name_food" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text=" bs"
-                android:textColor="@color/black"
-
-                android:textSize="20dp"
-                app:layout_constraintStart_toEndOf="@+id/precio_food"
                 app:layout_constraintTop_toBottomOf="@+id/name_food" />
 
             <ImageView
@@ -104,12 +95,16 @@
                 android:id="@+id/food_desc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="36dp"
-                android:fontFamily="sans-serif"
                 android:layout_marginStart="40dp"
+                android:layout_marginTop="36dp"
                 android:layout_marginEnd="40dp"
+                android:fontFamily="@font/alegreya"
                 android:text="Descripcion asdasdasdsdf"
-                android:textColor="#433B3B"
+                android:textColor="#ffffff"
+                android:background="@drawable/bg_round"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:padding="15dp"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -128,7 +123,7 @@
                 android:padding="20dp"
 
                 android:text="Cantidad:"
-                android:textColor="#433B3B"
+                android:textColor="#C8B3B3"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -142,7 +137,7 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="@font/boogaloo"
                 android:padding="20dp"
-                android:textColor="#433B3B"
+                android:textColor="#C8B3B3"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@id/food_cant"

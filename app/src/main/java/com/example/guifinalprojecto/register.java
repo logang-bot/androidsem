@@ -1,6 +1,7 @@
 package com.example.guifinalprojecto;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.ClipData;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -45,6 +46,8 @@ public class register extends AppCompatActivity {
     private Button addImage ;
     private CircleImageView img;
 
+    ProgressDialog progressDialog;
+
     private register root =this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +79,8 @@ public class register extends AppCompatActivity {
                 TextInputEditText regemail = root.findViewById(R.id.reg_email);
                 TextInputEditText regpass = root.findViewById(R.id.reg_pass);
                 TextInputEditText regcpass = root.findViewById(R.id.reg_cpass);
+
+                progressDialog = new ProgressDialog(root);
 
                 String name= regname.getText().toString().trim();
                 String email = regemail.getText().toString().trim();
@@ -113,6 +118,9 @@ public class register extends AppCompatActivity {
                             }
                             Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
                             if(response.body().getMessage().equals("sugoi")){
+                                progressDialog.show();
+                                progressDialog.setContentView(R.layout.progress_dialog);
+                                progressDialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
                                 Intent intent = new Intent(root, MainDashboard.class);
                                 root.startActivity(intent);
                             }
