@@ -87,13 +87,6 @@ public class listMyRests extends AppCompatActivity {
         });
         loadComponents();
     }
-
-    @Override
-    public void onBackPressed(){
-        Intent intent = new Intent(root, MainDashboard.class);
-        root.startActivity(intent);
-    }
-
     private void loadComponents(){
         create_Rest = this.findViewById(R.id.newR);
         create_Rest.setOnClickListener(new View.OnClickListener() {

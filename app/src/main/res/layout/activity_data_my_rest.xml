@@ -18,7 +18,7 @@
                 android:id="@+id/toolbarR"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#273937"
+                android:background="#051E2B"
                 >
 
                 <TextView
@@ -35,7 +35,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="65dp">
+            android:layout_marginTop="65dp"
+            android:background="@drawable/prueba">
 
             <ImageView
                 android:id="@+id/imgRestP"
@@ -68,6 +69,7 @@
                 android:fontFamily="casual"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/textView"
                 app:layout_constraintTop_toBottomOf="@+id/imgRestP"
                 tools:ignore="MissingConstraints" />
@@ -80,7 +82,7 @@
                 android:layout_marginTop="100dp"
                 android:fontFamily="@font/amarante"
                 android:text="Nit  :"
-                android:textColor="#4B817C"
+                android:textColor="#0E0E0E"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgRestP"
@@ -94,7 +96,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Direccion  :"
-                android:textColor="#4B817C"
+                android:textColor="#0E0E0E"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -107,7 +109,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Telefono  :"
-                android:textColor="#4B817C"
+                android:textColor="#0E0E0E"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
@@ -120,7 +122,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Log  :"
-                android:textColor="#4B817C"
+                android:textColor="#0E0E0E"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView6" />
@@ -133,7 +135,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Lat  :"
-                android:textColor="#4B817C"
+                android:textColor="#0E0E0E"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -146,7 +148,7 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/amarante"
                 android:text="Fecha de Registro  :"
-                android:textColor="#4B817C"
+                android:textColor="#0E0E0E"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -158,6 +160,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/textView5"
@@ -170,6 +173,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/textView6"
@@ -182,6 +186,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/textView7"
@@ -194,6 +199,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
@@ -206,6 +212,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:fontFamily="casual"
+                android:textStyle="bold"
                 android:textColor="#FFFFFF"
                 android:textSize="15sp"
                 app:layout_constraintStart_toEndOf="@+id/textView9"
@@ -216,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"
-                android:backgroundTint="#273937"
+                android:backgroundTint="#051E2B"
                 android:fontFamily="@font/boogaloo"
                 android:text="PRODUCTOS"
                 android:textColor="#ffff"
