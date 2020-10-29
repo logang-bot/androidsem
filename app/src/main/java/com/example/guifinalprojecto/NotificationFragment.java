@@ -13,7 +13,9 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.guifinalprojecto.adapters.ResAdapter;
@@ -72,6 +74,9 @@ public class NotificationFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //to avoid keyboard moves fragment up
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        //--to avoid keyboard moves fragment up
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -81,6 +86,9 @@ public class NotificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        //to avoid keyboard moves fragment up
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        //--to avoid keyboard moves fragment up
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_notification, container, false);
     }
@@ -93,7 +101,9 @@ public class NotificationFragment extends Fragment {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //--to avoid keyboard moves fragment up
         ListView listR = this.getActivity().findViewById(R.id.mysearchRest);
-
+        ImageView imgstat = this.getActivity().findViewById(R.id.imgstatusnotif);
+        TextView txtstat = this.getActivity().findViewById(R.id.textstatus);
+        imgstat.setAlpha(50);
         FloatingActionButton search = this.getActivity().findViewById(R.id.searchbtn);
 
         search.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +120,14 @@ public class NotificationFragment extends Fragment {
                     public void onResponse(Call<ArrayList<structRests>> call, Response<ArrayList<structRests>> response) {
 
                         ArrayList<structRests> data = response.body();
+                        if(data.size()==0){
+                            imgstat.setImageResource(R.drawable.disappoin);
+                            txtstat.setText("No Results Found");
+                        }
+                        else{
+                            imgstat.setImageResource(0);
+                            txtstat.setText("");
+                        }
                         ResAdapter adapter = new ResAdapter(data, getContext());
                         listR.setAdapter(adapter);
 
@@ -136,4 +154,13 @@ public class NotificationFragment extends Fragment {
             }
         });
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //to avoid keyboard moves fragment up
+        //getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        //--to avoid keyboard moves fragment up
+    }
+
 }

@@ -71,21 +71,6 @@ public class displayDeleteUser extends AppCompatActivity {
 
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
-                /*Call<logInResponse> call = RetrofitClient
-                        .getInstance()
-                        .getApi().delUser(UserDataServer.TOKEN);
-                call.enqueue(new Callback<logInResponse>() {
-                    @Override
-                    public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
-                        Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(root, MainActivity.class);
-                        root.startActivity(intent);
-                    }
-                    @Override
-                    public void onFailure(Call<logInResponse> call, Throwable t) {
-                        Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });*/
             }
         });
     }

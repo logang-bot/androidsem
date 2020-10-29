@@ -63,11 +63,11 @@ public class createMyMenu extends AppCompatActivity {
                             Intent intent = new Intent(root, image_createMyMenu.class);
                             intent.putExtra("nombre", nombre);
                             intent.putExtra("idRes",idRes);
+                            intent.putExtra("idMenu", response.body().get_id());
                             intent.putExtra("nameRest",nameRest);
                             root.startActivity(intent);
                         }
                     }
-
                     @Override
                     public void onFailure(Call<structMenu> call, Throwable t) {
                         Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();

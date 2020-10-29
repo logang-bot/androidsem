@@ -111,6 +111,10 @@ public interface Api {
     @GET("menu/search")
     Call<ArrayList<structMenu>> getSearchMenu(@Query("word") String word);
 
+    @Multipart
+    @POST("menu/setfoto")
+    Call<logInResponse> setfotoMenu(@Header("x-access-token") String auth, @Query("id") String idRes, @Part MultipartBody.Part part);
+
     @GET("menu")
     Call<ArrayList<structMenu>> getMenu(@Query("idRes") String idRes);
 

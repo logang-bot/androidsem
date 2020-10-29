@@ -12,6 +12,7 @@ import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,6 +37,10 @@ public class listMyRests extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_my_rests);
        ListView listR = findViewById(R.id.myrest);
+        ImageView imgstat = findViewById(R.id.imgstatusListMyRests);
+        TextView txtstat = findViewById(R.id.textstatusListMyrest);
+        imgstat.setAlpha(50);
+
   /*     ArrayList<String> datos= new ArrayList<>();
        datos.add("1");
         datos.add("2");
@@ -59,6 +64,11 @@ public class listMyRests extends AppCompatActivity {
                     }
                     else{ */
                         ArrayList<structRests> data = response.body();
+                        if(data.size()!=0){
+                            imgstat.setImageResource(0);
+                            txtstat.setText("");
+                        }
+
                         ResAdapter adapter = new ResAdapter(data, getApplicationContext());
                         listR.setAdapter(adapter);
              //      }}

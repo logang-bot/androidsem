@@ -3,6 +3,7 @@ package com.example.guifinalprojecto;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,8 +20,10 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class dataRest extends AppCompatActivity {
+    private String latitude="", longitude="";
+
     private String idRest;
-    private Button atras;
+    private Button atras, viewLocation;
     private dataRest root=this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +67,9 @@ public class dataRest extends AppCompatActivity {
                         .load(RetrofitClient.BASE_URL + data.getLogo())
                         .centerCrop()
                         .into(logoRest);
+
+                longitude = data.getLog();
+                latitude = data.getLat();
             }
             @Override
             public void onFailure(Call<structRests> call, Throwable t) {
@@ -75,6 +81,7 @@ public class dataRest extends AppCompatActivity {
 
     private void loadComponents(){
         atras = this.findViewById(R.id.verMenus);
+        viewLocation = this.findViewById(R.id.verUbi);
 
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,5 +92,18 @@ public class dataRest extends AppCompatActivity {
             }
         });
 
+        viewLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //"http://maps.google.com/maps?q=loc:37.7749,-122.4194" + destinationLatitude + "," + destinationLongitude;
+                String uri = "http://maps.google.com/maps?q=loc:" + latitude + "," + longitude;
+                Uri gmmIntentUri = Uri.parse("http://maps.google.com/maps?q=loc:37.7749,-122.4194");
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+                intent.setPackage("com.google.android.apps.maps");
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                }
+            }
+        });
     }
 }

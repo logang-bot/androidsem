@@ -13,7 +13,9 @@ import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.guifinalprojecto.adapters.ResAdapter;
@@ -94,6 +96,9 @@ public class MoreFragment extends Fragment {
         getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //--to avoid keyboard moves fragment up
         GridView listM = this.getActivity().findViewById(R.id.mysearchMenu);
+        ImageView imgstatm = this.getActivity().findViewById(R.id.imgstatusmore);
+        TextView txtstatm = this.getActivity().findViewById(R.id.textstatusmore);
+        imgstatm.setAlpha(50);
 
         FloatingActionButton search = this.getActivity().findViewById(R.id.searchMsearchbtn);
 
@@ -111,6 +116,14 @@ public class MoreFragment extends Fragment {
                     public void onResponse(Call<ArrayList<structMenu>> call, Response<ArrayList<structMenu>> response) {
 
                         ArrayList<structMenu> data = response.body();
+                        if(data.size()==0){
+                            imgstatm.setImageResource(R.drawable.disappoin);
+                            txtstatm.setText("No Results Found");
+                        }
+                        else{
+                            imgstatm.setImageResource(0);
+                            txtstatm.setText("");
+                        }
                         searchMenuAdapter adapter = new searchMenuAdapter(data, getContext());
                         listM.setAdapter(adapter);
 
@@ -137,5 +150,13 @@ public class MoreFragment extends Fragment {
                 });
             }
         });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //to avoid keyboard moves fragment up
+        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+        //--to avoid keyboard moves fragment up
     }
 }
