@@ -14,7 +14,7 @@ public class structRests {
     private String lat;
     private String message;
 
-    public structRests(String logo, String foto, String _id, String fechaReg, String nombre, String nit, String propietario, String calle, String telefono, String log, String lat) {
+    public structRests(String logo, String foto, String _id, String fechaReg, String nombre, String nit, String propietario, String calle, String telefono, String log, String lat, String message) {
         this.logo = logo;
         this.foto = foto;
         this._id = _id;

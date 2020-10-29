@@ -4,16 +4,11 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
-import com.example.guifinalprojecto.adapters.HomeAdapter;
-import com.example.guifinalprojecto.adapters.profileAdapter;
-import com.example.guifinalprojecto.adapters.structRests;
 import com.example.guifinalprojecto.interfaces.RetrofitClient;
 import com.example.guifinalprojecto.models.user;
 import com.example.guifinalprojecto.utils.UserDataServer;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -23,14 +18,10 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;

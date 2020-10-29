@@ -91,8 +91,14 @@ public interface Api {
     Call<logInResponse> setlogo(@Header("x-access-token") String auth, @Query("id") String idRes, @Part MultipartBody.Part part);
 
     @FormUrlEncoded
+    @POST("res/setlocation")
+    Call<logInResponse> setlocation(@Header("x-access-token") String auth, @Query("id") String idRes,
+                                    @Field("log") String log,
+                                    @Field("lat") String lat);
+
+    @FormUrlEncoded
     @POST("res/create")
-    Call<structRests> createRest(
+    Call<logInResponse> createRest(
             @Header("x-access-token") String auth,
             @Field("nombre") String nombreR,
             @Field("nit") String nitR,
