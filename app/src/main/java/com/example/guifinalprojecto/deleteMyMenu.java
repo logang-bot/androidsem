@@ -32,7 +32,7 @@ public class deleteMyMenu extends AppCompatActivity {
         setContentView(R.layout.activity_delete_my_menu);
 
         bundle = this.getIntent().getExtras();
-        String idMenu = bundle.getString("idMenu");
+        String idMenu = bundle.getString("idM");
         String nomMenuu = bundle.getString("nomMenu");
         String idRest=bundle.getString("idRest");
         String nameRest=bundle.getString("nameRest");
@@ -58,7 +58,8 @@ public class deleteMyMenu extends AppCompatActivity {
                                 call.enqueue(new Callback<structMenu>() {
                                     @Override
                                     public void onResponse(Call<structMenu> call, Response<structMenu> response) {
-                                        Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                                        //Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
+                                        Toast.makeText(root, idMenu, Toast.LENGTH_LONG).show();
                                         Intent intent = new Intent(root, listMyMenus.class);
                                         intent.putExtra("idRest",idRest);
                                         intent.putExtra("nameRest",nameRest);

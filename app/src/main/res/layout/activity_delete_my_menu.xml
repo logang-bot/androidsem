@@ -29,7 +29,7 @@
         android:textAlignment="center"
         android:textColor="#121111"
         android:textSize="23sp"
-        android:textStyle="bold|italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/nomMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

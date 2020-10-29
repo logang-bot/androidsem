@@ -21,14 +21,15 @@ import retrofit2.Response;
 
 public class dataMyMenu extends AppCompatActivity {
     private dataMyMenu root=this;
-    private String nombre, precio, descripcion,cantidad_dia,idM,nameRest,idRest;
+    private Bundle bundle;
+    private String nombre, precio, descripcion,cantidad_dia,idM,nameRest,idRest, idMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_my_menu);
 
         Bundle bundle = this.getIntent().getExtras();
-        String idMenu = bundle.getString("idMenu");
+        idMenu = bundle.getString("idMenu");
         nameRest = bundle.getString("nameRest");
         idRest = bundle.getString("idRest");
 
@@ -82,7 +83,8 @@ public class dataMyMenu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(root, editMyMenu.class);
-                intent.putExtra("idM",idM);
+                intent.putExtra("idM",idMenu);
+                intent.putExtra("idRest",idRest);
                 intent.putExtra("nameRest",nameRest);
                 intent.putExtra("nombre", nombre);
                 intent.putExtra("precio", precio);
@@ -103,5 +105,12 @@ public class dataMyMenu extends AppCompatActivity {
                 root.startActivity(intent);
             }
         });
+    }
+    @Override
+    public void onBackPressed(){
+        Intent intent = new Intent(root, listMyMenus.class);
+        intent.putExtra("idRest",idRest);
+        intent.putExtra("nameRest",nameRest);
+        root.startActivity(intent);
     }
 }

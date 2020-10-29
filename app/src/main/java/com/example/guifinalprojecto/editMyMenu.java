@@ -43,6 +43,7 @@ public class editMyMenu extends AppCompatActivity {
         String cantidad_dia = bundle.getString("cantidad");
 
         String nameRest=bundle.getString("nameRest");
+        String idRest=bundle.getString("idRest");
 
         edname.setText(nombre);
         edprecio.setText(precio);
@@ -71,8 +72,12 @@ public class editMyMenu extends AppCompatActivity {
                         if(msg.equals("Datos actualizados")){
                             Intent intent = new Intent(root, dataMyMenu.class);
                             intent.putExtra("idMenu",id);
+                            intent.putExtra("idRest",idRest);
                             intent.putExtra("nameRest",nameRest);
                             root.startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(root,"no se pudo actualizar",Toast.LENGTH_LONG).show();
                         }
                     }
                     @Override
@@ -83,4 +88,5 @@ public class editMyMenu extends AppCompatActivity {
             }
         });
     }
+
 }

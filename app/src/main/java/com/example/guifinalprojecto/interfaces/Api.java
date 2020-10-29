@@ -129,6 +129,7 @@ public interface Api {
     @DELETE("menu/delete")
     Call<structMenu> delMenu(@Query("id") String id);
 
+    @FormUrlEncoded
     @PUT("menu/edit")
     Call<structMenu> edMenu(
                              @Query("id") String id,
