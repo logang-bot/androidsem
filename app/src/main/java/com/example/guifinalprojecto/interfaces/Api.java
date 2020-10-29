@@ -126,6 +126,14 @@ public interface Api {
             @Field("descripcion") String descripcion,
             @Field("cantidad_por_dia") String cantidad_por_dia
     );
+    @DELETE("menu/delete")
+    Call<structMenu> delMenu(@Query("id") String id);
 
-
+    @PUT("menu/edit")
+    Call<structMenu> edMenu(
+                             @Query("id") String id,
+                             @Field("nombre") String nombre,
+                             @Field("precio") String precio,
+                             @Field("descripcion") String descripcion,
+                             @Field("cantidad_por_dia") String cantidad_por_dia);
 }

@@ -73,6 +73,7 @@ public class listMyMenus extends AppCompatActivity {
                         //animation
                         Intent intent = new Intent(getApplicationContext(), dataMyMenu.class); //cambiar vista
                         intent.putExtra("idMenu", data.get(i).get_id());
+                        intent.putExtra("idRest",idRest);
                         intent.putExtra("nameRest",nameRest);
                         root.startActivity(intent);
                         Toast.makeText(getApplicationContext(),data.get(i).getNombre() , Toast.LENGTH_LONG).show();

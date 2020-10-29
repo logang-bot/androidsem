@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.guifinalprojecto.adapters.structMenu;
@@ -22,13 +23,23 @@ import retrofit2.Response;
 public class deleteMyMenu extends AppCompatActivity {
     private deleteMyMenu root = this;
     private Button confirmButton;
+    private Bundle bundle;
+    private String idM;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete_my_menu);
 
-        confirmButton = findViewById(R.id.confirmDelete);
+        bundle = this.getIntent().getExtras();
+        String idMenu = bundle.getString("idMenu");
+        String nomMenuu = bundle.getString("nomMenu");
+        String idRest=bundle.getString("idRest");
+        String nameRest=bundle.getString("nameRest");
+        TextView nomMenu =findViewById(R.id.nomMenu);
+        nomMenu.setText(nomMenuu);
+
+        confirmButton = findViewById(R.id.delM);
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,23 +47,25 @@ public class deleteMyMenu extends AppCompatActivity {
                 AlertDialog.Builder builder1 = new AlertDialog.Builder(root);
                 builder1.setMessage("¿ESTAS SEGURO/A QUE DESEAS ELIMINAR ESTE PRODUCTO?");
                 builder1.setCancelable(true);
-/*
+
                 builder1.setPositiveButton(
                         "Yes",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 Call<structMenu> call = RetrofitClient
                                         .getInstance()
-                                        .getApi().delMenu(UserDataServer.TOKEN);
-                                call.enqueue(new Callback<logInResponse>() {
+                                        .getApi().delMenu(idMenu);
+                                call.enqueue(new Callback<structMenu>() {
                                     @Override
-                                    public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
+                                    public void onResponse(Call<structMenu> call, Response<structMenu> response) {
                                         Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
-                                        Intent intent = new Intent(root, MainActivity.class);
+                                        Intent intent = new Intent(root, listMyMenus.class);
+                                        intent.putExtra("idRest",idRest);
+                                        intent.putExtra("nameRest",nameRest);
                                         root.startActivity(intent);
                                     }
                                     @Override
-                                    public void onFailure(Call<logInResponse> call, Throwable t) {
+                                    public void onFailure(Call<structMenu> call, Throwable t) {
                                         Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
                                     }
                                 });
@@ -70,21 +83,7 @@ public class deleteMyMenu extends AppCompatActivity {
 
                 AlertDialog alert11 = builder1.create();
                 alert11.show();
-                /*Call<logInResponse> call = RetrofitClient
-                        .getInstance()
-                        .getApi().delUser(UserDataServer.TOKEN);
-                call.enqueue(new Callback<logInResponse>() {
-                    @Override
-                    public void onResponse(Call<logInResponse> call, Response<logInResponse> response) {
-                        Toast.makeText(root, response.body().getMessage(), Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(root, MainActivity.class);
-                        root.startActivity(intent);
-                    }
-                    @Override
-                    public void onFailure(Call<logInResponse> call, Throwable t) {
-                        Toast.makeText(root, t.getMessage(), Toast.LENGTH_LONG).show();
-                    }
-                });*/
+
             }
         });
     }

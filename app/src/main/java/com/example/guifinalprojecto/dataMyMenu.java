@@ -21,7 +21,7 @@ import retrofit2.Response;
 
 public class dataMyMenu extends AppCompatActivity {
     private dataMyMenu root=this;
-    private String nombre, precio, descripcion,cantidad_dia,idM;
+    private String nombre, precio, descripcion,cantidad_dia,idM,nameRest,idRest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,8 @@ public class dataMyMenu extends AppCompatActivity {
 
         Bundle bundle = this.getIntent().getExtras();
         String idMenu = bundle.getString("idMenu");
-        String nameRest = bundle.getString("nameRest");
+        nameRest = bundle.getString("nameRest");
+        idRest = bundle.getString("idRest");
 
         TextView title_res = findViewById(R.id.title_res_onMyMenu);
         title_res.setText(nameRest);
@@ -62,23 +63,6 @@ public class dataMyMenu extends AppCompatActivity {
                 FloatingActionButton delete_menu = findViewById(R.id.elimMenu);
                 FloatingActionButton edit_menu = findViewById(R.id.editMenu);
 
-                delete_menu.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(root, deleteMyMenu.class);
-                        root.startActivity(intent);
-                        Toast.makeText(getApplicationContext(),data.get_id() , Toast.LENGTH_LONG).show();
-                    }
-                });
-
-                edit_menu.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent intent = new Intent(root, editMyMenu.class);
-                        root.startActivity(intent);
-                        Toast.makeText(getApplicationContext(),data.get_id() , Toast.LENGTH_LONG).show();
-                    }
-                });
 
                 Glide.with(getApplicationContext())
                         .load(RetrofitClient.BASE_URL + data.getFoto())
@@ -99,6 +83,7 @@ public class dataMyMenu extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(root, editMyMenu.class);
                 intent.putExtra("idM",idM);
+                intent.putExtra("nameRest",nameRest);
                 intent.putExtra("nombre", nombre);
                 intent.putExtra("precio", precio);
                 intent.putExtra("descripcion", descripcion);
@@ -113,6 +98,8 @@ public class dataMyMenu extends AppCompatActivity {
                 Intent intent = new Intent(root, deleteMyMenu.class);
                 intent.putExtra("idM", idM);
                 intent.putExtra("nombre", nombre);
+                intent.putExtra("idRest",idRest);
+                intent.putExtra("nameRest",nameRest);
                 root.startActivity(intent);
             }
         });
