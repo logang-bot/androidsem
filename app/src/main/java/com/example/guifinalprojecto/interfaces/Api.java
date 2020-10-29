@@ -108,6 +108,9 @@ public interface Api {
     @DELETE("res/delete")
     Call<structRests> delRest(@Query("id") String idRes);
 
+    @GET("res/propdata")
+    Call<structRests> getPropdata(@Header("x-access-token") String auth);
+
     @GET("menu/search")
     Call<ArrayList<structMenu>> getSearchMenu(@Query("word") String word);
 

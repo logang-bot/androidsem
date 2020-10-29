@@ -19,7 +19,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class dataRest extends AppCompatActivity {
-    private String idRest;
+    private String idRest,nameRest;
     private Button atras;
     private dataRest root=this;
     @Override
@@ -29,15 +29,30 @@ public class dataRest extends AppCompatActivity {
         Bundle bundle = this.getIntent().getExtras();
         idRest = bundle.getString("idRest");
         Toast.makeText(this," idRest = "+idRest.toString(), Toast.LENGTH_LONG).show();
-
         Call<structRests> call = RetrofitClient
                 .getInstance()
-                .getApi().getMydataRes(UserDataServer.TOKEN,idRest);
+                .getApi().getPropdata(UserDataServer.TOKEN);
         call.enqueue(new Callback<structRests>() {
             @Override
             public void onResponse(Call<structRests> call, Response<structRests> response) {
                 structRests data = response.body();
+                TextView NomPropietario= findViewById(R.id.propietarioRestC);
+                NomPropietario.setText(data.getMessage());
+            }
+            @Override
+            public void onFailure(Call<structRests> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
 
+        Call<structRests> call1 = RetrofitClient
+                .getInstance()
+                .getApi().getMydataRes(UserDataServer.TOKEN,idRest);
+        call1.enqueue(new Callback<structRests>() {
+            @Override
+            public void onResponse(Call<structRests> call, Response<structRests> response) {
+                structRests data = response.body();
+                nameRest=data.getNombre();
                 ImageView imgRest= findViewById(R.id.imgRestP);
                 ImageView logoRest= findViewById(R.id.logoRest);
                 TextView NomPropietario= findViewById(R.id.propietarioRestC);
@@ -79,8 +94,9 @@ public class dataRest extends AppCompatActivity {
         atras.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(root, listMyRests.class);
-               // intent.putExtra("idRest", idRest);
+                Intent intent = new Intent(root, listMenus.class);
+               intent.putExtra("idRest", idRest);
+                intent.putExtra("nameRest", nameRest);
                 root.startActivity(intent);
             }
         });
